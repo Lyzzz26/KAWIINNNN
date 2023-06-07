@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+  <title>Staff Profile</title>
+</head>
+<body>
+  <style>
+    body{
+      display:block;
+    }
+    .body{
+      margin-top: 50px;
+      margin-left: 40px;
+      display:flex;
+    }
+    .menu{
+      width:25%;
+    }
+    .menu ul{
+      margin-top: 20px;
+    }
+    .menu li{
+      background: rgba(250, 214, 146, 0.75);
+      border: 1px solid black;
+      padding:10px;
+      list-style:none;
+    }
+    .menu li:hover{
+      background: rgba(250, 186, 69, 0.75);
+    }
+    .menu .StaffProfile{
+      width: 100%;
+      background: rgba(234, 177, 71, 0.75);
+    }
+    .menu .logOut{
+      background: rgba(227, 164, 47, 0.73);
+      font-weight:bold ;
+    }
+    a{
+      color:black;
+      text-decoration: none;
+    }
+    .StaffInfo{
+      margin: 0 auto;
+      width: 700px;
+    }
+    .StaffInfo table{
+      margin: auto;
+      margin-top:30px;
+      width:100%;
+      border-collapse: collapse;
+      border:solid 1px black;
+      background-color: #D9D9D9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .StaffInfo .HeaderText{
+      font-weight:bolder ;
+      background: rgba(255, 175, 24, 0.69);
+    }
+    .StaffInfo .HeaderText{
+      font-size: 30px;
+      text-align: center;
+    }
+    .StaffInfo table td{
+      font-size: 18px;
+      padding:10px 30px;
+    }
+    .edit{
+      margin: 0 auto;
+      width:20%;
+      margin-top: 20px;
+    }
+    .edit button{
+      padding: 13px 13px;
+      background: rgba(255, 186, 121, 0.75);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 20px;
+      cursor:pointer;
+    }
+    .box {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    float: left;
+    padding-left: 10px;
+    background: #FFC860;
+    }
+
+
+    table {
+    border-collapse: collapse;
+    width: 98%;
+    }
+    th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    background-color: lightgray;
+    }
+    th {
+    background-color: lightgray;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .button-link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    }
+  </style>
+
+  <div class="header">
+  <div class="banner"style="margin:0 auto; text-align:center;">
+    <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+  </div>
+  <div class="body">
+    <div class="menu">
+      <ul>
+        <li><a href="#">Staff Profile</a></li>
+        <li><a href="#">Preparation Course Registration</a></li>
+        <li><a href="#">Marriage Request</a></li>
+        <li><a href="#">Marriage Registration</a></li>
+        <li><a href="#">Collection Certificate and Card Nikah</a></li>
+        <li><a href="#">Marriage Consultion</a></li>
+        <li><a href="#">Log Out</a></li>
+      </ul>
+    </div>
+    <div class="box">
+        <h2>PARTICIPANT ATTENDANCE</h2>
+        <div class="form-group">
+            <label for="SORT">SORT BY </label>
+            <select id="sorting" name="sort">
+              <option value="today">Today</option>
+              <option value="week">Last Week</option>
+              <option value="month">Last Month</option>
+            </select>
+          </div>
+
+        <table>
+            <tr>
+                <th>NO.</th>
+                <th>PARTICIPANT NAME</th>
+                <th>ORGANIZER</th>
+                <th>STATUS</th>
+                <th>ACTION</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>MOHAMAD FAIZ IRFAN BIN MOHAMAD ZAID</td>
+                <td>PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
+                <td>IN PROGRESS</td>
+                <td><button class="button yes-button">
+                    <img src="https://clipground.com/images/yes-button-clipart-6.png" alt="Yes Button" style="width: 20px; height: 20px;">
+                    </button>
+                    <button class="button no-button">
+                    <img src="https://th.bing.com/th/id/R.c4478f951134b20366d39c4f2b771170?rik=kxF0cLUNW1ROzQ&riu=http%3a%2f%2fcdn.1001freedownloads.com%2fvector%2fthumb%2f90431%2fBoton_mal.png&ehk=0TXbdw1baFCXeAj1AzdylKdSPCgDsQfD71wT6e%2fkpwU%3d&risl=&pid=ImgRaw&r=0" alt="No Button" style="width: 20px; height: 20px;">
+                    </button>
+                    <button class="button upload-button">
+                    <img src="https://th.bing.com/th/id/R.d9a6bd708a172f16aad5ad3fa67eb0d6?rik=R3Tzq5ToNS5Mfg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_454208.png&ehk=dXNYO0yPVI%2fPqj7Z1Ni3ojdXzhihh8ssGuxgiGamQmQ%3d&risl=&pid=ImgRaw&r=0" alt="Upload Button" style="width: 20px; height: 20px;">
+                    </button></td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>RIZAL BIN ROMZI</td>
+                <td>PEJABAT AGAMA ISLAM JERANTUT</td>
+                <td>COMPLETE</td>
+                <td><button class="button yes-button">
+                    <img src="https://clipground.com/images/yes-button-clipart-6.png" alt="Yes Button" style="width: 20px; height: 20px;">
+                    </button>
+                    <button class="button no-button">
+                    <img src="https://th.bing.com/th/id/R.c4478f951134b20366d39c4f2b771170?rik=kxF0cLUNW1ROzQ&riu=http%3a%2f%2fcdn.1001freedownloads.com%2fvector%2fthumb%2f90431%2fBoton_mal.png&ehk=0TXbdw1baFCXeAj1AzdylKdSPCgDsQfD71wT6e%2fkpwU%3d&risl=&pid=ImgRaw&r=0" alt="No Button" style="width: 20px; height: 20px;">
+                    </button>
+                    <button class="button upload-button">
+                    <img src="https://th.bing.com/th/id/R.d9a6bd708a172f16aad5ad3fa67eb0d6?rik=R3Tzq5ToNS5Mfg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_454208.png&ehk=dXNYO0yPVI%2fPqj7Z1Ni3ojdXzhihh8ssGuxgiGamQmQ%3d&risl=&pid=ImgRaw&r=0" alt="Upload Button" style="width: 20px; height: 20px;">
+                    </button></td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>SYED SALEHUDDIN AL JUFRI BIN SYED RAMLI</td>
+                <td>PEJABAT AGAMA ISLAM TEMERLOH</td>
+                <td>ABSENT</td>
+                <td><button class="button yes-button">
+                    <img src="https://clipground.com/images/yes-button-clipart-6.png" alt="Yes Button" style="width: 20px; height: 20px;">
+                    </button>
+                    <button class="button no-button">
+                    <img src="https://th.bing.com/th/id/R.c4478f951134b20366d39c4f2b771170?rik=kxF0cLUNW1ROzQ&riu=http%3a%2f%2fcdn.1001freedownloads.com%2fvector%2fthumb%2f90431%2fBoton_mal.png&ehk=0TXbdw1baFCXeAj1AzdylKdSPCgDsQfD71wT6e%2fkpwU%3d&risl=&pid=ImgRaw&r=0" alt="No Button" style="width: 20px; height: 20px;">
+                    </button>
+                    <button class="button upload-button">
+                    <img src="https://th.bing.com/th/id/R.d9a6bd708a172f16aad5ad3fa67eb0d6?rik=R3Tzq5ToNS5Mfg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_454208.png&ehk=dXNYO0yPVI%2fPqj7Z1Ni3ojdXzhihh8ssGuxgiGamQmQ%3d&risl=&pid=ImgRaw&r=0" alt="Upload Button" style="width: 20px; height: 20px;">
+                    </button></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    </div>
+        
+    <script>
+        var yesButtons = document.querySelectorAll(".yes-button");
+        var noButtons = document.querySelectorAll(".no-button");
+        var uploadButtons = document.querySelectorAll(".upload-button");
+
+        for (var i = 0; i < uploadButtons.length; i++) {
+           uploadButtons[i].style.display = "none";
+        }
+      
+        for (var i = 0; i < yesButtons.length; i++) {
+          yesButtons[i].addEventListener("click", function() {
+            this.style.display = "inline-block";
+            this.nextElementSibling.style.display = "none";
+            this.nextElementSibling.nextElementSibling.style.display = "inline-block";
+          });
+        }
+      
+        for (var i = 0; i < noButtons.length; i++) {
+          noButtons[i].addEventListener("click", function() {
+            this.style.display = "inline-block";
+            this.nextElementSibling.style.display = "none";
+            this.previousElementSibling.style.display = "none";
+          });
+        }
+
+        for (var i = 0; i < uploadButtons.length; i++) {
+          uploadButtons[i].addEventListener("click", function() {
+          alert("Course certificate uploaded!");
+          });
+        }
+      </script>
+
+    </body>
+    </html>

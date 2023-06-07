@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+    body{
+      display:block;
+    }
+    .body{
+      margin-top: 50px;
+      margin-left: 40px;
+      display:flex;
+    }
+
+    .menu ul{
+      margin-top: 20px;
+    }
+    .menu li{
+      background: rgba(203, 220, 247, 0.75);
+      border: 1px solid black;
+      padding:10px;
+      list-style:none;
+    }
+    .menu li:hover{
+      background-color: rgba(98, 158, 255, 0.75);
+    }
+    .menu .logOut{
+      background: rgba(129, 156, 206, 0.73);
+      font-weight:bold ;
+    }
+    a{
+      color:black;
+      text-decoration: none;
+    }
+    .UserInfo{
+      margin: 0 auto;
+      width: 700px;
+    }
+    .UserInfo table{
+      margin: auto;
+      margin-top:30px;
+    }
+    .UserInfo .HeaderText{
+      font-weight:bolder ;
+      background: rgba(124, 224, 194, 0.61);
+    }
+    .UserInfo .HeaderText{
+      font-size: 30px;
+      text-align: center;
+    }
+    .UserInfo table td{
+      font-size: 24px;
+      padding-left:60px;
+      padding-top: 13px;
+    }
+    .UserInfo table .User{
+      color: #9F9F9F;
+    }
+
+    .box {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    float: left;
+    padding-left: 10px;
+    background: rgba(124, 224, 194, 0.61);
+    }
+
+
+    table {
+    border-collapse: collapse;
+    width: 98%;
+    }
+    th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    background-color: lightgray;
+    }
+    th {
+    background-color: lightgray;
+    }
+
+
+    .print-button {
+    background-image: url("https://cdn.onlinewebfonts.com/svg/img_229016.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: lightgray;
+    width: 40px; 
+    height: 40px;
+    border: none;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    }
+    .print-button:hover {
+    background-color: white;
+    }
+
+
+    .submit {
+    background-image: url("https://www.pinclipart.com/picdir/big/15-153148_search-magnifying-glass-icon-black-search-icon-png.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:rgba(124, 224, 194, 0.61);
+    width: 18px; 
+    height: 18px;
+    border: none;
+    }
+
+    .popup-container {
+    display: none; /* Hide the popup container by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid black;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    }
+
+    .popup-content {
+    text-align: center;
+    font-weight: bold;
+    }
+
+    .close-button {
+    cursor: pointer;
+    }
+</style>
+</head>
+
+<script>
+    function printFunction() {
+      var popup = document.getElementById("popup");
+      popup.style.display = "block"; // Show the popup
+    
+      setTimeout(function() {
+        popup.style.display = "none"; // Hide the popup after a delay
+      }, 2000); // Adjust the delay (in milliseconds) as needed
+    }
+    
+    function closePopup() {
+      var popup = document.getElementById("popup");
+      popup.style.display = "none"; // Hide the popup
+    }
+
+    function checkIdentityCard() {
+      alert('Identitiy Card Number Not Found!');
+    }
+    </script>
+
+<body>
+    <div class="header">
+        <div class="banner"style="margin:0 auto; text-align:center;">
+          <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+          </div>
+        </div>
+    <div class="body">
+        <div class="menu">
+          <ul>
+            <li><a href="#">User Profile</a></li>
+            <li><a href="#">Preparation Course Registration</a></li>
+            <li><a href="#">Marriage Request</a></li>
+            <li><a href="#">Marriage Registration</a></li>
+            <li><a href="#">Collection Certificate and Card Nikah</a></li>
+            <li><a href="#">Marriage Consultion</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
+        </div>
+        <div class="box">
+            <h2>USER PREPARATION COURSE INFORMATION</h2>
+            <div class="input-section">
+                <form method="post" action="">
+                    <input type="text" id="identity-card">
+                    <button class="submit" onclick="checkIdentityCard()"></button>
+                    <button><a href="C:\Users\LENOVO\Videos\Testing folder\USERPREPARATIONSESSIONINTERFACE.html" class="button-link">Session</a></button>
+                </form>
+            </div>
+    
+            <table>
+                <tr>
+                    <th>NO.</th>
+                    <th>ORGANIZER</th>
+                    <th>LOCATION</th>
+                    <th>DATE</th>
+                    <th>PRINT SLIP</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
+                    <td>BILIK SEMINAR PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
+                    <td>28 - 29 JANUARY 2023</td>
+                    <td><button class="print-button" onclick="printFunction()"></button>
+                        <div id="popup" class="popup-container">
+                            <div class="popup-content">
+                              <p>PRINTING...</p>
+                              <span class="close-button" onclick="closePopup()">close</span>
+                            </div></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>PEJABAT AGAMA ISLAM JERANTUT</td>
+                    <td>HOTEL DARUL MAKMUR</td>
+                    <td>28 - 29 JANUARY 2023</td>
+                    <td><button class="print-button" onclick="printFunction()"></button>
+                        <div id="popup" class="popup-container">
+                            <div class="popup-content">
+                              <p>PRINTING...</p>
+                              <span class="close-button" onclick="closePopup()">Close</span>
+                            </div></td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>PEJABAT AGAMA ISLAM TEMERLOH</td>
+                    <td>DEWAN KULIAH MASHAS TEMERLOH</td>
+                    <td>28 - 29 JANUARY 2023</td>
+                    <td><button class="print-button" onclick="printFunction()"></button>
+                        <div id="popup" class="popup-container">
+                            <div class="popup-content">
+                              <p>PRINTING...</p>
+                              <span class="close-button" onclick="closePopup()">Close</span>
+                            </div></td>
+                </tr>
+            </table>
+        </div>
+</body>
+</html>

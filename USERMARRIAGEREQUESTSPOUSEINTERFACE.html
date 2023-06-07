@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+      display: block;
+    }
+
+    .body {
+      margin-top: 50px;
+      margin-left: 40px;
+      display: flex;
+    }
+
+    .menu ul {
+      margin-top: 20px;
+    }
+
+    .menu li {
+      background: rgba(203, 220, 247, 0.75);
+      border: 1px solid black;
+      padding: 10px;
+      list-style: none;
+    }
+
+    .menu li:hover {
+      background-color: rgba(98, 158, 255, 0.75);
+    }
+
+    .menu .logOut {
+      background: rgba(129, 156, 206, 0.73);
+      font-weight: bold;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .form-container {
+      margin-top: 20px;
+      background-color: rgba(203, 220, 247, 0.75);
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      background-color: #a0c1fb;
+      border: none;
+      cursor: pointer;
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    .button.applicant-info {
+      background-color: #a0c1fb;
+    }
+
+    .button.spouse-info {
+      background-color: #3984ff;
+    }
+
+    .button.marriage-info {
+      background-color: #a0c1fb;
+    }
+
+    .form {
+      background-color: #c5c0c0;
+    }
+
+    .form label {
+      display: inline-block;
+      width: 200px;
+    }
+
+    .form input[type="text"] {
+      width: 300px;
+    }
+
+    .save-button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .save-button {
+      padding: 10px;
+      color: black;
+      border: none;
+      cursor: pointer;
+      width: 100px;
+      margin-right: 10px;
+    }
+
+    .reset-button{
+      padding: 10px;
+      background-color: #4CAF50;
+      color: black;
+      border: none;
+      cursor: pointer;
+      width: 100px;
+    }
+</style>
+</head>
+
+<script>
+    // Load saved data
+    window.addEventListener("DOMContentLoaded", function() {
+      var formData = JSON.parse(localStorage.getItem("marriageFormData"));
+      if (formData) {
+        document.getElementById("name").value = formData.name || "";
+        document.getElementById("identity").value = formData.identity || "";
+        document.getElementById("dob").value = formData.dob || "";
+        document.getElementById("email").value = formData.email || "";
+        document.getElementById("address").value = formData.address || "";
+        document.getElementById("phone").value = formData.phone || "";
+        document.getElementById("education").value = formData.education || "";
+        document.getElementById("employment").value = formData.employment || "";
+        document.getElementById("income").value = formData.income || "";
+        document.getElementById("workAddress").value = formData.workAddress || "";
+        document.getElementById("maritalStatus").value = formData.maritalStatus || "";
+        document.getElementById("age").value = formData.age || "";
+        document.getElementById("gender").value = formData.gender || "";
+        document.getElementById("race").value = formData.race || "";
+        document.getElementById("officePhone").value = formData.officePhone || "";
+        document.getElementById("courseCertificate").value = formData.courseCertificate || "";
+      }
+    });
+
+    // Save data
+    function saveForm() {
+      var formData = {
+        name: document.getElementById("name").value,
+        identity: document.getElementById("identity").value,
+        dob: document.getElementById("dob").value,
+        email: document.getElementById("email").value,
+        address: document.getElementById("address").value,
+        phone: document.getElementById("phone").value,
+        education: document.getElementById("education").value,
+        employment: document.getElementById("employment").value,
+        income: document.getElementById("income").value,
+        workAddress: document.getElementById("workAddress").value,
+        maritalStatus: document.getElementById("maritalStatus").value,
+        age: document.getElementById("age").value,
+        gender: document.getElementById("gender").value,
+        race: document.getElementById("race").value,
+        officePhone: document.getElementById("officePhone").value,
+        courseCertificate: document.getElementById("courseCertificate").value
+      };
+
+      localStorage.setItem("marriageFormData", JSON.stringify(formData));
+      alert("Form Saved!");
+    }
+
+    function resetForm() {
+          var form = document.getElementById("marriageForm");
+          form.reset();
+          localStorage.removeItem("marriageFormData");
+        }
+</script>
+
+<body>
+    <div class="header">
+        <div class="banner" style="margin:0 auto; text-align:center;">
+          <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+        </div>
+    </div>
+    <div class="body">
+        <div class="menu">
+          <ul>
+            <li><a href="#">User Profile</a></li>
+            <li><a href="#">Preparation Course Registration</a></li>
+            <li><a href="#">Marriage Request</a></li>
+            <li><a href="#">Marriage Registration</a></li>
+            <li><a href="#">Collection Certificate and Card Nikah</a></li>
+            <li><a href="#">Marriage Consultion</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
+        </div>
+
+    <div class="form-container">
+        <h2>MARRIAGE REQUEST FORM</h2>
+        <div class="button-container">
+            <button class="button applicant-info">APPLICANT INFORMATION</button>
+            <button class="button spouse-info">SPOUSE INFORMATION</button>
+            <button class="button marriage-info">MARRIAGE INFORMATION</button>
+        </div>
+        <form id="marriageForm">
+          <div class="form">
+              <label for="name">NAME:</label>
+              <input type="text" id="name">
+              <br>
+              <label for="identity">IDENTITY CARD NO.:</label>
+              <input type="text" id="identity">
+              <br>
+              <label for="dob">DATE OF BIRTH:</label>
+              <input type="text" id="dob">
+              <br>
+              <label for="email">EMAIL:</label>
+              <input type="text" id="email">
+              <br>
+              <label for="address">ADDRESS:</label>
+              <input type="text" id="address">
+              <br>
+              <label for="phone">PHONE NUMBER:</label>
+              <input type="text" id="phone">
+              <br>
+              <label for="education">EDUCATION LEVEL:</label>
+              <input type="text" id="education">
+              <br>
+              <label for="employment">EMPLOYMENT:</label>
+              <input type="text" id="employment">
+              <br>
+              <label for="income">INCOME:</label>
+              <input type="text" id="income">
+              <br>
+              <label for="workAddress">WORK ADDRESS:</label>
+              <input type="text" id="workAddress">
+              <br>
+              <label for="maritalStatus">MARITAL STATUS:</label>
+              <input type="text" id="maritalStatus">
+              <br>
+              <label for="age">AGE:</label>
+              <input type="text" id="age">
+              <br>
+              <label for="gender">GENDER:</label>
+              <input type="text" id="gender">
+              <br>
+              <label for="race">RACE:</label>
+              <input type="text" id="race">
+              <br>
+              <label for="officePhone">PHONE NUMBER (OFFICE):</label>
+              <input type="text" id="officePhone">
+              <br>
+              <label for="courseCertificate">PRE MARRIAGE COURSE CERTIFICATE NO:</label>
+              <input type="text" id="courseCertificate">
+              <br>
+          </div>
+          <div class="save-button-container">
+            <button><a href="C:\Users\LENOVO\Videos\Testing folder\USERMARRIAGEREQUESTAPPLICANTINTERFACE.html" class="back-button" onclick="backForm()">Back</a></button>
+              <button><a href="C:\Users\LENOVO\Videos\Testing folder\USERMARRIAGEREQUESTSPOUSEINTERFACE.html" class="save-button" onclick="saveForm()">Save</button></a>
+              <button class="reset-button" onclick="resetForm()">Reset</button>
+          </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
