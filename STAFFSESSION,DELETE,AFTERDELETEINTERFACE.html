@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link 
   href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
   rel="stylesheet"  type='text/css'>
-  <title>Staff Profile</title>
-</head>
-<body>
-  <style>
+<head>
+
+<style>
     body{
       display:block;
     }
     .body{
       margin-top: 50px;
-      margin-left: 40px;
+      margin-left: 10px;
       display:flex;
     }
     .menu{
@@ -46,31 +44,78 @@
       color:black;
       text-decoration: none;
     }
-    .StaffInfo{
-      margin: 0 auto;
-      width: 700px;
+
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+
+  th {
+    background-color: lightgray;
+    color: black;
+  }
+
+
+  .HeaderText {
+    text-align: left; /* Align the header text to the left */
+    padding-bottom: 50px;
+    border: none;
+    background: #FFC860;
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .button-input {
+    border: none;
+    background: #FFC860;
+  }
+
+  .custom-input {
+    height: 30px;
+    width: 30%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+  }
+
+   .print-button {
+    background-image: url("https://cdn.onlinewebfonts.com/svg/img_229016.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: lightgray;
+    width: 40px; 
+    height: 40px;
+    border: none;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    align-items: center;
     }
-    .StaffInfo table{
-      margin: auto;
-      margin-top:30px;
-      width:100%;
-      border-collapse: collapse;
-      border:solid 1px black;
-      background-color: #D9D9D9;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    .print-button:hover {
+    background-color: white;
     }
-    .StaffInfo .HeaderText{
-      font-weight:bolder ;
-      background: rgba(255, 175, 24, 0.69);
+
+
+    .submit {
+    background-image: url("https://www.pinclipart.com/picdir/big/15-153148_search-magnifying-glass-icon-black-search-icon-png.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#FFC860;
+    width: 18px; 
+    height: 18px;
+    border: none;
     }
-    .StaffInfo .HeaderText{
-      font-size: 30px;
-      text-align: center;
-    }
-    .StaffInfo table td{
-      font-size: 18px;
-      padding:10px 30px;
-    }
+
     .edit{
       margin: 0 auto;
       width:20%;
@@ -86,34 +131,23 @@
       cursor:pointer;
     }
 
-    .box {
-    margin-top: 20px;
-    border-collapse: collapse;
-    width: 100%;
-    float: left;
-    padding-left: 10px;
-    background: #FFC860;
-    }
-
-
-    table {
-    border-collapse: collapse;
-    width: 98%;
-    }
-    th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
+    .three-button {
+  text-align: right;
+  border: none;
+  background-color: white;
+}
+.info {
+    background-image: url("https://webstockreview.net/images/edit-icon-png-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: lightgray;
+    width: 3px; 
+    height: 18px;
+    border: none;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer; 
     }
-    th {
-    background-color: lightgray;
-    }
-
-    .district {
-        width: 20%;
-    }
-
     .submit {
     background-image: url("https://www.pinclipart.com/picdir/big/15-153148_search-magnifying-glass-icon-black-search-icon-png.png");
     background-repeat: no-repeat;
@@ -123,7 +157,6 @@
     height: 18px;
     border: none;
     }
-
     .delete-button {
     background-image: url("https://pluspng.com/img-png/delete-button-png-delete-icon-1600.png");
     background-repeat: no-repeat;
@@ -139,114 +172,112 @@
     .delete-button:hover {
     background-color: white;
     }
-    .button-container {
-      display: flex;
-      gap: 10px;
-    }
-    .info {
-    background-image: url("https://webstockreview.net/images/edit-icon-png-1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: lightgray;
-    width: 3px; 
-    height: 18px;
-    border: none;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer; 
-    }
-  </style>
+
+
+</style>
+</head>
 
 <script>
 
   
-    function deletesession(row) {
-        if (confirm("Are you sure you want to delete this session?")) {
-        var table = document.getElementById("data-table");
-        table.deleteRow(row);
-        alert("Session deleted");
-      } else {
-        // Cancel delete
-        alert("Canceled!");
-      }
+  function deletesession(row) {
+      if (confirm("Are you sure you want to delete this session?")) {
+      var table = document.getElementById("data-table");
+      table.deleteRow(row);
+      alert("Session deleted");
+    } else {
+      // Cancel delete
+      alert("Canceled!");
     }
+  }
 </script>
 
-  <div class="header">
-  <div class="banner"style="margin:0 auto; text-align:center;">
-    <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
-  </div>
-  <div class="body">
-    <div class="menu">
-      <ul>
-        <li><a href="#">Staff Profile</a></li>
-        <li><a href="#">Preparation Course Registration</a></li>
-        <li><a href="#">Marriage Request</a></li>
-        <li><a href="#">Marriage Registration</a></li>
-        <li><a href="#">Collection Certificate and Card Nikah</a></li>
-        <li><a href="#">Marriage Consultion</a></li>
-        <div class="logOut">
-        <li><a href="#">Log Out</a></li>
+<body>
+    <div class="header">
+        <div class="banner"style="margin:0 auto; text-align:center;">
+          <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+          </div>
         </div>
-      </ul>
-    </div>
-    <div class="box">
-        <h2>ORGANIZER INFORMATION</h2>
-        <div class="input-section">
-            <form method="post" action="">
-                <input class="district" type="text" name="value" placeholder="ALL DISTRICT RELIGIOUS OFFICES">
-                <button class="submit" name="Search"></button>
+    <div class="body">
+        <div class="menu">
+          <ul>
+            <li><a href="#">User Profile</a></li>
+            <li><a href="USERPREPARATIONCOURSEHOMEPAGE.html">Preparation Course Registration</a></li>
+            <li><a href="#">Marriage Request</a></li>
+            <li><a href="#">Marriage Registration</a></li>
+            <li><a href="#">Collection Certificate and Card Nikah</a></li>
+            <li><a href="#">Marriage Consultion</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
         </div>
-
-        <table id="data-table">
+        <table>
+          <thead>
             <tr>
-                <th>NO.</th>
-                <th>ORGANIZER</th>
-                <th>LOCATION</th>
-                <th>DATE</th>
-                <th>ACTION</th>
+                <th colspan="5" class="HeaderText">ORGANIZER INFORMATION</th>
             </tr>
             <tr>
-                <td>1.</td>
-                <td>PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
-                <td>BILIK SEMINAR PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
-                <td>28 - 29 JANUARY 2023</td>
-                <td>
-                <div class="button-container">    
-                <button class="delete-button" type="button" onclick="deletesession(1)"></button>
-                <a href="C:\Users\LENOVO\Videos\Testing folder\staf course session information.html" class="info"></a></div>
-                </td>
+              <td colspan="5" class="button-input">
+                <div class="input-section">
+                  <form method="post" action="">
+                      <input type="text" name="value" placeholder="ALL DISTRICT RELIGIOUS OFFICES" class="custom-input">
+                      <button class="submit" name="Search"></button>
+                  </form>
+              </div>
+              </td>
             </tr>
             <tr>
-                <td>2.</td>
-                <td>PEJABAT AGAMA ISLAM JERANTUT</td>
-                <td>HOTEL DARUL MAKMUR</td>
-                <td>28 - 29 JANUARY 2023</td>
-                <td>
-                <div class="button-container">    
-                <button class="delete-button" type="button" onclick="deletesession(2)"></button>
-                <a href="C:\Users\LENOVO\Videos\Testing folder\staf course session information.html" class="info"></a></div>
-                </td>
+              <th>NO.</th>
+              <th>ORGANIZER</th>
+              <th>LOCATION</th>
+              <th>DATE</th>
+              <th>ACTION</th>
+          </tr>
+          </thead>
+          <tbody id="data-table">
+            <tr>
+              <td>1.</td>
+              <td>PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
+              <td>BILIK SEMINAR PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
+              <td>28 - 29 JANUARY 2023</td>
+              <td>
+              <div class="button-container">    
+              <button class="delete-button" type="button" onclick="deletesession(1)"></button>
+              <a href="C:\Users\LENOVO\Videos\Testing folder\staf course session information.html" class="info"></a></div>
+              </td>
             </tr>
             <tr>
-                <td>3.</td>
-                <td>PEJABAT AGAMA ISLAM TEMERLOH</td>
-                <td>DEWAN KULIAH MASHAS TEMERLOH</td>
-                <td>28 - 29 JANUARY 2023</td>
-                <td>
-                <div class="button-container">    
-                <button class="delete-button" type="button" onclick="deletesession(3)"></button>
-                <a href="C:\Users\LENOVO\Videos\Testing folder\staf course session information.html" class="info"></a></div>
-                </td>
+              <td>2.</td>
+              <td>PEJABAT AGAMA ISLAM JERANTUT</td>
+              <td>HOTEL DARUL MAKMUR</td>
+              <td>28 - 29 JANUARY 2023</td>
+              <td>
+              <div class="button-container">    
+              <button class="delete-button" type="button" onclick="deletesession(2)"></button>
+              <a href="C:\Users\LENOVO\Videos\Testing folder\staf course session information.html" class="info"></a></div>
+              </td>
             </tr>
+            <tr>
+              <td>3.</td>
+              <td>PEJABAT AGAMA ISLAM TEMERLOH</td>
+              <td>DEWAN KULIAH MASHAS TEMERLOH</td>
+              <td>28 - 29 JANUARY 2023</td>
+              <td>
+              <div class="button-container">    
+              <button class="delete-button" type="button" onclick="deletesession(3)"></button>
+              <a href="C:\Users\LENOVO\Videos\Testing folder\staf course session information.html" class="info"></a></div>
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td colspan="5" class="three-button">
+                <div class="button-wrapper">
+                  <button><a href="C:\Users\LENOVO\Videos\Testing folder\STAFFADDSESSIONINTERFACE.html" class="button-link">ADD</a></button>
+                  </div>
+              </td>
+            </tr>
+          </tbody>
         </table>
-
-        <div class="button-wrapper">
-            <button><a href="C:\Users\LENOVO\Videos\Testing folder\STAFFADDSESSIONINTERFACE.html" class="button-link">ADD</a></button>
-            </div>
-
     </div>
-    </div>
-    </div>
-    </body>
-    </html>
+</body>
+</html>

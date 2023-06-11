@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Form Example</title>
-  <style>
+
+<style>
     body{
       display:block;
     }
     .body{
       margin-top: 50px;
-      margin-left: 40px;
+      margin-left: 10px;
       display:flex;
     }
 
@@ -24,82 +24,142 @@
     .menu li:hover{
       background-color: rgba(98, 158, 255, 0.75);
     }
-    .menu .logOut{
-      background: rgba(129, 156, 206, 0.73);
-      font-weight:bold ;
-    }
+
     a{
       color:black;
       text-decoration: none;
     }
-
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .form-group label {
-      width: 120px;
-    }
-
-    .form-group input,
-    .form-group select {
-      flex: 1;
-      padding: 5px;
-    }
-
-    .form-group input[type="file"],
-    .form-group button[type="submit"] {
-      flex-basis: 100%;
-      margin-top: 10px;
-    }
-
     table {
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
 
-    td {
-      padding: 10px;
-      border: 1px solid black;
-    }
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightgray;
+  }
 
-    input[type="file"] {
-      margin-bottom: 10px;
-    }
+  th {
+    background-color: lightgray;
+    color: black;
+  }
 
-    button[type="submit"] {
+
+  .HeaderText {
+    text-align: left;
+    padding-bottom: none;
+    border: none;
+    background: rgba(124, 224, 194, 0.61);
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 90%;
+  }
+
+  h2 {
+    font-size: x-large;
+    text-decoration: underline;
+  }
+
+  p {
+    font-size: medium;
+  }
+
+  .button-input {
+    border: none;
+    background: rgba(124, 224, 194, 0.61);
+  }
+
+  .custom-input {
+    height: 30px;
+    width: 20%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+form {
+  width: 100%;
+}
+
+fieldset {
+  border: none;
+}
+
+label {
+  width: 100px; 
+  text-align: right;
+  margin-right: 10px;
+
+}
+
+input[type="text"] {
+  width: 400px; 
+}
+input[type="number"] {
+  width: 400px; 
+}
+input[type="tel"] {
+  width: 400px; 
+}
+input[type="email"] {
+  width: 400px; 
+}
+
+select[id="gender"] {
+  width: 406px;
+}
+
+button[type="submit"] {
       padding: 5px 10px;
       background-color: #4CAF50;
       color: white;
       border: none;
       cursor: pointer;
-    }
-  </style>
+      margin-top: 5px;
+      border-radius: 5px;
+}
+
+.td-1 {
+  background-color: #1E6161;
+  color: white;
+}
+
+.three-button {
+  text-align: right;
+  border: none;
+  background-color: white;
+}
+
+</style>
 </head>
 
 <script>
-        function upload() {
-      alert('Proof Of Payment Uploaded.');
-    }
-    function saveForm() {
-      alert('Form data has been saved.');
-    }
+  function upload() {
+alert('Proof Of Payment Uploaded.');
+}
+function saveForm() {
+alert('Form data has been saved.');
+}
 
-    function printSlip() {
-      alert('Slip is being printed.');
-    }
+function printSlip() {
+alert('Slip is being printed.');
+}
 
-    function submitForm() {
-        alert('Form submitted.');
-    }
-  </script>
+function submitForm() {
+  alert('Form submitted.');
+}
+</script>
 
 
 <body>
@@ -112,7 +172,7 @@
         <div class="menu">
           <ul>
             <li><a href="#">User Profile</a></li>
-            <li><a href="#">Preparation Course Registration</a></li>
+            <li><a href="USERPREPARATIONCOURSEHOMEPAGE.html">Preparation Course Registration</a></li>
             <li><a href="#">Marriage Request</a></li>
             <li><a href="#">Marriage Registration</a></li>
             <li><a href="#">Collection Certificate and Card Nikah</a></li>
@@ -121,105 +181,130 @@
           </ul>
         </div>
 
-        
-        <div class="container">
-                
-    <h2>APPLICANT INFORMATION</h2>
-    <p>ORGANIZER: PEJABAT AGAMA ISLAM JERANTUT<br>
-    DATE: 28-29 JANUARY 2023</p>
+        <table>
+          <thead>
+            <tr>
+                <th colspan="2" class="HeaderText">
+                  <h2>APPLICANT INFORMATION</h2>
+                  <p>ORGANIZER: PEJABAT AGAMA ISLAM JERANTUT<br>
+                  DATE: 28-29 JANUARY 2023</p></th>
+            </tr>
+            <tr>
 
-            <div class="form-wrapper">
-              <form>
-                <fieldset>
-                  <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="age">Age:</label>
-                    <input type="number" id="age" name="age" required>
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" required>
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="state">State:</label>
-                    <input type="text" id="state" name="state">
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="district">District:</label>
-                    <input type="text" id="district" name="district">
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="employment">Employment:</label>
-                    <input type="text" id="employment" name="employment">
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="gender">Gender:</label>
-                    <select id="gender" name="gender">
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="ic">Identity Card No.:</label>
-                    <input type="text" id="ic" name="ic">
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="postcode">Postcode:</label>
-                    <input type="text" id="postcode" name="postcode">
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="education">Education Level:</label>
-                    <input type="text" id="education" name="education">
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone">
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-        
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td colspan="2">            
+                  <div class="form-wrapper">
+                  <form>
+                    <fieldset>
+                      <div class="form-group" style="float:right;">
+                        <label for="ic"><b>IC NO.</b></label>
+                        <input type="text" id="ic" name="ic">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name"><b>Name:</label>
+                        <input type="text" id="name" name="name" required>
+                      </div>
+
+                      <div class="form-group" style="float:right;">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                      </div>
+            
+                      <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required>
+                      </div>
+                                  
+                      <div class="form-group" style="float:right;">
+                        <label for="postcode">Postcode:</label>
+                        <input type="text" id="postcode" name="postcode">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required>
+                      </div>
+                      
+                      <div class="form-group" style="float:right;">
+                        <label for="education">Education Level:</label>
+                        <input type="text" id="education" name="education">
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="address"></label>
+                        <input type="text" id="address" name="address" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="address"></label>
+                        <input type="text" id="address" name="address" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="state">State:</label>
+                        <input type="text" id="state" name="state">
+                      </div>
+            
+                      <div class="form-group">
+                        <label for="district">District:</label>
+                        <input type="text" id="district" name="district">
+                      </div>
+
+                        
+                      <div class="form-group">
+                        <label for="employment">Employment:</label>
+                        <input type="text" id="employment" name="employment">
+                      </div>
+            
+                      <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone">
+                      </div>
+                    </b>
+                    </fieldset>
+                  </form>
+                </div></td>
+            </tr>
+          </tbody>
+          <tbody>
             <div class="table-wrapper">
-              <table>
                 <tr>
-                  <td>
+                  <td class="td-1">
                     <strong>Pembayaran yuran pendaftaran kursus Pra Perkahwinan adalah sebanyak RM120.00.</strong> Sila muat naik resit pembayaran sebagai bukti selepas membuat pembayaran.<br>
                     Bank: Maybank<br>
                     No. Akaun: 787890657483<br>
                     Rujukan: [NAMA PENUH/KURSUS KHAWIN]
                   </td>
-                  <td>
+                  <td class="td-1">
                     <input type="file" name="document"><br>
                     <button type="submit" onclick="upload()">Upload Document</button>
                   </td>
                 </tr>
-              </table>
             </div>
+          </tbody>
+          <tbody>
+            <tr>
+              <td colspan="2" class="three-button">
+                <button type="button" class="button-link" onclick="saveForm()">Save</button>
+                <button type="button" class="button-link" onclick="printSlip()">Print Slip</button>
+                <button><a href="C:\Users\LENOVO\Videos\Testing folder\USERPREPARATIONCOURSEHOMEPAGE.html" class="button-link" onclick="submitForm()">Submit</a></button>
+              </td>
+            </tr>
+          </tbody>
 
-          <div class="button-wrapper">
-            <button type="button" onclick="saveForm()">Save</button>
-            <button type="button" onclick="printSlip()">Print Slip</button>
-            <button><a href="C:\Users\LENOVO\Videos\Testing folder\test COurse.html" class="button-link" onclick="submitForm()">Submit</a></button>
-          </div>
-          </div>
-</body>
-</html>
+        </table>
+        </div>
+        </body>
+        </html>

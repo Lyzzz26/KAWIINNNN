@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Profile Homepage</title>
+</head>
+<body>
+  <style>
+    body{
+      display:block;
+    }
+    .body{
+      margin-top: 50px;
+      margin-left: 40px;
+      display:flex;
+    }
+
+    .menu ul{
+      margin-top: 20px;
+    }
+    .menu li{
+      list-style: none;
+      background: rgba(250, 214, 146, 0.75);
+      border: 1px solid black;
+      padding:10px;
+    }
+    .menu li:hover{
+      background-color:  rgba(244, 178, 56, 0.75);
+    }
+    .menu .logOut{
+      background: rgba(227, 164, 47, 0.73);
+      font-weight: bold;
+    }
+    a{
+      color:black;
+      text-decoration: none;
+    }
+    .StaffInfo{
+      margin: 0 auto;
+      width: 700px;
+    }
+    .StaffInfo table{
+      margin: auto;
+      margin-top:30px;
+    }
+    .StaffInfo .HeaderText{
+      font-weight:bolder ;
+      background: rgba(255, 175, 24, 0.69);
+    }
+    .StaffInfo .HeaderText{
+      font-size: 30px;
+      text-align: center;
+    }
+    .StaffInfo table td{
+      font-size: 24px;
+      padding-left:60px;
+      padding-top: 13px;
+    }
+    .StaffInfo table .Staff{
+      color: #9F9F9F;
+    }
+  </style>
+  <div class="banner"style="margin:0 auto; text-align:center;">
+    <img src="images\headerImg.png" width="96%" height="155px">
+  </div>
+  <div class="body">
+    <div class="menu">
+      <ul>
+        <li><a href="{{route('StaffProfile')}}">Staff Profile</a></i></li>
+        <li><a href="#">Preparation Course Registration</a></li>
+        <li><a href="#">Marriage Request</a></li>
+        <li><a href="#">Marriage Registration</a></li>
+        <li><a href="#">Collection Certificate and Card Nikah</a></li>
+        <li><a href="#">Marriage Consultion</a></li>
+        <div class="logOut">
+        <li><a href="{{ route('logOut') }}">Log Out</a></li>
+        </div>
+      </ul>
+    </div>
+    <div class="StaffInfo">
+      <table>
+        <div class="HeaderText">
+          <p>Staff Information</p>
+        </div>
+        <tr>
+          <td>Staff ID</td>
+          <td>:</td>
+          <td class="Staff">{{ $detail->StaffICNumber ??'' }}</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>:</td>
+          <td class="Staff">{{ $detail->staffName ??'' }}</td>
+        </tr>
+        <tr>
+          <td>Roles</td>
+          <td>:</td>
+          <td class="Staff">Staff</td>
+        </tr>
+        <tr>
+          <td>Date Register</td>
+          <td>:</td>
+          <td class="Staff">{{ $detail->staffRegistrationDate ??'' }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
