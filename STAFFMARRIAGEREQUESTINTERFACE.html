@@ -76,10 +76,11 @@
   th {
     background-color: lightgray;
     color: black;
+    text-align: left;
   }
   .HeaderText {
     text-align: left;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     border: none;
     background: #FFC860;
     font-size: x-large;
@@ -102,6 +103,34 @@
     border: none;
     background: #FFC860;
   }
+  .print-button {
+    background-image: url("https://cdn.onlinewebfonts.com/svg/img_229016.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: lightgray;
+    width: 40px; 
+    height: 40px;
+    border: none;
+    padding: 8px 2px;
+    border: none;
+    margin-left: 30px;
+    cursor: pointer;
+
+    margin-top: none;
+    }
+    .info {
+    background-image: url("https://webstockreview.net/images/edit-icon-png-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: lightgray;
+    width: 37px; 
+    height: 38px;
+    border: none;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer; 
+    margin-left: 20px;
+    }
 
   </style>
 
@@ -124,10 +153,11 @@
         </ul>
       </div>
 
+
       <table>
         <thead>
           <tr>
-            <th colspan="5" class="HeaderText">PARTICIPANT LIST</th>
+            <th colspan="5" class="HeaderText">APPLICANT REQUEST MARRIAGE SUBMISSION</th>
           </tr>
           <tr>
             <td colspan="5" class="button-input">
@@ -143,37 +173,55 @@
           </tr>
           </tr>
         </thead>
+
+
           <tbody>
             <tr>
-                <th>NO.</th>
-                <th>REQUEST DATE</th>
-                <th>PARTICIPANT NAME</th>
-                <th>ORGANIZER</th>
-                <th>ACTION</th>
-            </tr>
-            <tr>
-                <td>1.</td>
-                <td>15 JANUARY 2023</td>
-                <td>MOHAMAD FAIZ IRFAN BIN MOHAMAD ZAID</td>
-                <td>PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
-                <td><a href="C:\Users\LENOVO\Videos\Testing folder\STAFFAPPROVALINTERFACE.html" class="button-link">MAKE APPROVAL</a></td>
-            </tr>
-            <tr>
-                <td>2.</td>
-                <td>15 JANUARY 2023</td>
-                <td>RIZAL BIN ROMZI</td>
-                <td>PEJABAT AGAMA ISLAM JERANTUT</td>
-                <td><a href="C:\Users\LENOVO\Videos\Testing folder\STAFFAPPROVALINTERFACE.html" class="button-link">MAKE APPROVAL</a></td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td>13 JANUARY 2023</td>
-                <td>SYED SALEHUDDIN AL JUFRI BIN SYED RAMLI</td>
-                <td>PEJABAT AGAMA ISLAM TEMERLOH</td>
-                <td><a href="C:\Users\LENOVO\Videos\Testing folder\STAFFAPPROVALINTERFACE.html" class="button-link">MAKE APPROVAL</a></td>
-            </tr>
+              <th>NO.</th>
+              <th>REQUEST DATE</th>
+              <th>PARTICIPANT NAME</th>
+              <th>IDENTITY CARD NUMBER</th>
+              <th>ACTION</th>
+          </tr>
+          <tr>
+              <td>1.</td>
+              <td>15 JANUARY 2023</td>
+              <td>MOHAMAD FAIZ IRFAN BIN MOHAMAD ZAID</td>
+              <td>010301-06-0987</td>
+              <td>
+                <div class="button-container">  
+                  <button class="info" onclick="window.location.href = '#';"></button>
+                <button class="print-button" onclick="alert('Printing!')"></button>
+              </div>
+              </td>
+          </tr>
+          <tr>
+              <td>2.</td>
+              <td>15 JANUARY 2023</td>
+              <td>RIZAL BIN ROMZI</td>
+              <td>010126-06-0571</td>
+              <td>
+                <div class="button-container">  
+                  <button class="info" onclick="window.location.href = 'STAFFMARRIAGEREQUESTAPPROVALINTERFACE.html';"></button>
+                <button class="print-button" onclick="alert('Printing!')"></button>
+              </div>
+              </td>
+          </tr>
+          <tr>
+              <td>3.</td>
+              <td>15 JANUARY 2023</td>
+              <td>SYED SALEHUDDIN AL JUFRI BIN SYED RAMLI</td>
+              <td>010803-06-0987</td>
+              <td>              
+                <div class="button-container">  
+                <button class="info" onclick="window.location.href = '#';"></button>
+              <button class="print-button" onclick="alert('Printing!')"></button>
+            </div></td>
+          </tr>
         </tbody>
       </table>
       </div>
+
       </body>
+
       </html>

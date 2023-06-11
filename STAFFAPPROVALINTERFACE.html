@@ -46,45 +46,43 @@
       color:black;
       text-decoration: none;
     }
-    .StaffInfo{
-      margin: 0 auto;
-      width: 700px;
+    .box {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    float: left;
+    padding-left: 10px;
+    background: #FFC860;
     }
-    .StaffInfo table{
-      margin: auto;
-      margin-top:30px;
-      width:100%;
-      border-collapse: collapse;
-      border:solid 1px black;
-      background-color: #D9D9D9;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .StaffInfo .HeaderText{
-      font-weight:bolder ;
-      background: rgba(255, 175, 24, 0.69);
-    }
-    .StaffInfo .HeaderText{
-      font-size: 30px;
-      text-align: center;
-    }
-    .StaffInfo table td{
-      font-size: 18px;
-      padding:10px 30px;
-    }
-    .edit{
-      margin: 0 auto;
-      width:20%;
-      margin-top: 20px;
-    }
-    .edit button{
-      padding: 13px 13px;
-      background: rgba(255, 186, 121, 0.75);
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 20px;
-      cursor:pointer;
-    }
+
+
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+
+  th {
+    background-color: lightgray;
+    color: black;
+  }
+  .HeaderText {
+    text-align: left;
+    padding-bottom: 10px;
+    border: none;
+    background: #FFC860;
+    font-size: medium;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
     .form-group {
       display: flex;
@@ -92,37 +90,18 @@
       align-items: center;
       margin-bottom: 10px;
     }
-
-    .form-group label {
-      width: 120px;
+    .button-link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
     }
+    .button-input {
+    border: none;
+    background: #FFC860;
+  }
 
-    .form-group input,
-    .form-group select {
-      flex: 1;
-      padding: 5px;
-    }
 
-    .form-group input[type="file"],
-    .form-group button[type="submit"] {
-      flex-basis: 100%;
-      margin-top: 10px;
-    }
-
-    table {
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    td {
-      padding: 10px;
-      border: 1px solid black;
-    }
-    .form-wrapper {
-        width: 73%;
-    }
-
-    .reject-button {
+  .reject-button {
       background-color: red;
       color: black;
       border: none;
@@ -150,59 +129,135 @@
       font-size: 15px;
       cursor: pointer;  
     }
+    .form-wrapper {
+        background-color: lightgray;
+    }
+    fieldset {
+      border: none;
+    }
 
+input[type="text"] {
+width: 400px; 
+}
+input[type="number"] {
+  width: 400px; 
+}
+input[type="tel"] {
+  width: 400px; 
+}
+input[type="email"] {
+  width: 400px; 
+}
+
+select[id="gender"] {
+  width: 406px;
+}
+select[id="address"] {
+  width: 406px;
+}
+.three-button {
+  text-align: right;
+  border: none;
+  background-color: white;
+}
+label {
+  width: 100px; 
+  text-align: right;
+  margin-right: 10px;
+
+}
   </style>
 
-  <div class="header">
-  <div class="banner"style="margin:0 auto; text-align:center;">
-    <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
-  </div>
-  <div class="body">
-    <div class="menu">
-      <ul>
-        <li><a href="#">Staff Profile</a></li>
-        <li><a href="#">Preparation Course Registration</a></li>
-        <li><a href="#">Marriage Request</a></li>
-        <li><a href="#">Marriage Registration</a></li>
-        <li><a href="#">Collection Certificate and Card Nikah</a></li>
-        <li><a href="#">Marriage Consultion</a></li>
-        <div class="logOut">
-        <li><a href="#">Log Out</a></li>
-        </div>
-      </ul>
-    </div>
-    <div class="container">
-                
-        <h2>APPLICANT INFORMATION</h2>
-        <p>ORGANIZER: PEJABAT AGAMA ISLAM JERANTUT<br>
-        DATE: 28-29 JANUARY 2023</p>
-
-        <button class="download-button">
-              <img src="https://cdn4.iconfinder.com/data/icons/epic-outlines/30/documents_2-512.png" alt="Download" style="width: 20px; height: 20px;">
-            </a>
-          </button><br>PROOF OF PAYMENT
-
+<script>
+  function showPopup() {
+    alert('Proof Of Payment Downloaded');
+    var popup = window.open("", "DownloadPopup", "width=400,height=200");
     
+    popup.document.write("<h2>PROOF OF PAYMENT</h2>");
+    popup.document.write("<p>Receipt : Total PAyment RM120</p>");
+  }
+</script>
+
+<body>
+  <div class="header">
+      <div class="banner"style="margin:0 auto; text-align:center;">
+        <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+        </div>
+      </div>
+  <div class="body">
+      <div class="menu">
+        <ul>
+          <li><a href="#">User Profile</a></li>
+          <li><a href="STAFFPREPARATIONCOURSEINTERFACE.html">Preparation Course Registration</a></li>
+          <li><a href="STAFFMARRIAGEREQUESTINTERFACE.html">Marriage Request</a></li>
+          <li><a href="#">Marriage Registration</a></li>
+          <li><a href="#">Collection Certificate and Card Nikah</a></li>
+          <li><a href="#">Marriage Consultion</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+              <th colspan="2" class="HeaderText">
+                <h2>APPLICANT INFORMATION</h2>
+                <p>ORGANIZER: PEJABAT AGAMA ISLAM JERANTUT<br>
+                DATE: 28-29 JANUARY 2023</p>
+        
+                <button class="download-button" onclick="showPopup()">
+                      <img src="https://cdn4.iconfinder.com/data/icons/epic-outlines/30/documents_2-512.png" alt="Download" style="width: 20px; height: 20px;">
+                    </a>
+                  </button><br>PROOF OF PAYMENT
+                  </th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+          <tr>
+              <td colspan="2">            
                 <div class="form-wrapper">
                   <form>
                     <fieldset>
+                                  
+                      <div class="form-group" style="float:right;">
+                        <label class="form-label" for="id-card">IC No.:</label>
+                        <input class="form-input" type="text" id="ic" name="id-card" value="010126-06-0571">
+                      </div>
+
                       <div class="form-group">
                         <label class="form-label" for="name">Name:</label>
                         <input class="form-input" type="text" id="name" name="name" value="RIZAL BIN ROMZI">
+                      </div>
+                            
+                      <div class="form-group" style="float:right;">
+                        <label class="form-label" for="email">Email:</label>
+                        <input class="form-input" type="email" id="email" name="email" value="rizal330@gmail.com">
                       </div>
             
                       <div class="form-group">
                         <label class="form-label" for="age">Age:</label>
                         <input class="form-input" type="number" id="age" name="age" value="22">
                       </div>
-            
+   
+                      <div class="form-group" style="float:right;">
+                        <label class="form-label" for="postcode">Postcode:</label>
+                        <input class="form-input" type="text" id="postcode" name="postcode" value="26150">
+                      </div>
+                     
                       <div class="form-group">
                         <label class="form-label" for="address">Address:</label>
                         <textarea class="form-input" id="address" name="address" rows="4">LOT 8,
                   BATU 9 TAMAN SERI KU,
                   JALAN GAMBANG.</textarea>
                       </div>
-            
+
+                      <div class="form-group" style="float:right;">
+                        <label class="form-label" for="education">Education Level:</label>
+                        <input class="form-input" type="text" id="education" name="education" value="PHD">
+                      </div>
+                        
                       <div class="form-group">
                         <label class="form-label" for="state">State:</label>
                         <input class="form-input" type="text" id="state" name="state" value="PAHANG">
@@ -222,23 +277,8 @@
                         <label class="form-label" for="gender">Gender:</label>
                         <input class="form-input" type="text" id="gender" name="gender" value="MALE">
                       </div>
-            
-                      <div class="form-group">
-                        <label class="form-label" for="id-card">Identity Card No.:</label>
-                        <input class="form-input" type="text" id="id-card" name="id-card" value="010126-06-0571">
-                      </div>
-            
-                      <div class="form-group">
-                        <label class="form-label" for="email">Email:</label>
-                        <input class="form-input" type="email" id="email" name="email" value="rizal330@gmail.com">
-                      </div>
-            
-                      <div class="form-group">
-                        <label class="form-label" for="postcode">Postcode:</label>
-                        <input class="form-input" type="text" id="postcode" name="postcode" value="26150">
-                      </div>
-            
-                      <div class="form-group">
+
+                      <div class="form-group" style="float:right;">
                         <label class="form-label" for="education">Education Level:</label>
                         <input class="form-input" type="text" id="education" name="education" value="PHD">
                       </div>
@@ -249,52 +289,53 @@
                       </div>
                     </fieldset>
                   </form>
-                </div>
+                </div></td>
+          </tr>
+        </tbody>
 
-                <div class="button-wrapper">
-                    <button><a href="C:\Users\LENOVO\Videos\Testing folder\STAFFPARTICIPANTINTERFACE.html" class="submit-button" type="button" onclick="submitForm()">Submit</a></button>
-                    <button class="approve-button" type="button" onclick="approveForm()">APPROVE</button>
-                    <button class="reject-button" type="button" onclick="rejectForm()">REJECT</button>
-                </div>
-              </div>
-              </div>
-              </div>
+        <tbody>
+          <tr>
+            <td colspan="2" class="three-button">
+              <button><a href="STAFFPARTICIPANTINTERFACE.html" class="submit-button" type="button" onclick="submitForm()">Submit</a></button>
+              <button class="approve-button" type="button" onclick="approveForm()">APPROVE</button>
+              <button class="reject-button" type="button" onclick="rejectForm()">REJECT</button>
+            </td>
+          </tr>
+        </tbody>
 
-              <script>
-                function approveForm() {
-                  var approveButton = document.querySelector(".approve-button");
-                  var submitButton = document.querySelector(".submit-button");
-                  approveButton.style.display = "inline-block";
-                  submitButton.style.display = "inline-block";
-                  
-                  var rejectButton = document.querySelector(".reject-button");
-                  rejectButton.style.display = "none";
-                  
-                  alert("Form approved");
-                }
-                
-                function rejectForm() {
-                  var rejectButton = document.querySelector(".reject-button");
-                  var submitButton = document.querySelector(".submit-button");
-                  rejectButton.style.display = "inline-block";
-                  submitButton.style.display = "inline-block";
-                  
-                  var approveButton = document.querySelector(".approve-button");
-                  approveButton.style.display = "none";
-                  
-                  alert("Form rejected");
-                }
-                
-                function submitForm() {
-                  alert("Form submitted");
-                }
-              </script>
-    </body>
-    </html>
+      </table>
+      </div>
 
 
+      <script>
+        function approveForm() {
+          var approveButton = document.querySelector(".approve-button");
+          var submitButton = document.querySelector(".submit-button");
+          approveButton.style.display = "inline-block";
+          submitButton.style.display = "inline-block";
+          
+          var rejectButton = document.querySelector(".reject-button");
+          rejectButton.style.display = "none";
+          
+          alert("Form approved");
+        }
+        
+        function rejectForm() {
+          var rejectButton = document.querySelector(".reject-button");
+          var submitButton = document.querySelector(".submit-button");
+          rejectButton.style.display = "inline-block";
+          submitButton.style.display = "inline-block";
+          
+          var approveButton = document.querySelector(".approve-button");
+          approveButton.style.display = "none";
+          
+          alert("Form rejected");
+        }
+        
+        function submitForm() {
+          alert("Form submitted");
+        }
+      </script>
 
-
-
-
-
+      </body>
+      </html>

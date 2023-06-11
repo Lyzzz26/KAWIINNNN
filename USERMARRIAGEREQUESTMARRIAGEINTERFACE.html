@@ -1,303 +1,324 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-    body {
-      display: block;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+  <title>Staff Profile</title>
+</head>
+<body>
+  <style>
+    body{
+      display:block;
     }
-
-    .body {
+    .body{
       margin-top: 50px;
-      margin-left: 40px;
-      display: flex;
+      margin-left: 10px;
+      display:flex;
     }
 
-    .menu ul {
+    .menu ul{
       margin-top: 20px;
     }
-
-    .menu li {
+    .menu li{
       background: rgba(203, 220, 247, 0.75);
       border: 1px solid black;
-      padding: 10px;
-      list-style: none;
+      padding:10px;
+      list-style:none;
     }
-
-    .menu li:hover {
+    .menu li:hover{
       background-color: rgba(98, 158, 255, 0.75);
     }
 
-    .menu .logOut {
-      background: rgba(129, 156, 206, 0.73);
-      font-weight: bold;
-    }
-
-    a {
-      color: black;
+    a{
+      color:black;
       text-decoration: none;
     }
 
-    .form-container {
-      margin-top: 20px;
-      background-color: rgba(203, 220, 247, 0.75);
-      border: 1px solid black;
-      padding: 10px;
-    }
-
-    .form-container h2 {
-      text-align: center;
-    }
-
-    .button-container {
+    .form-group {
       display: flex;
-      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
       margin-bottom: 10px;
     }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
 
-    .button {
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+
+  td {
+    padding: 13px;
+  }
+  th {
+    background-color: lightgray;
+    color: black;
+  }
+  .HeaderText {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border: none;
+    background: rgba(203, 220, 247, 0.75);
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: none;
+      background-color: lightgray;
+    }
+    .button-link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    }
+    .button-input {
+    border: none;
+    background: white;
+  }
+  .button.applicant-info {
       background-color: #a0c1fb;
       border: none;
-      cursor: pointer;
-      flex: 1;
-      margin-right: 10px;
-    }
-
-    .button.applicant-info {
-      background-color: #3984ff;
+      height: 50px;
+      font-weight: bold;
     }
 
     .button.spouse-info {
       background-color: #a0c1fb;
+      border: none;
+      margin-left: 285px;
+      margin-right: 285px;
+      height: 50px;
+      font-weight: bold;
     }
 
     .button.marriage-info {
-      background-color: #a0c1fb;
-    }
-
-    .form {
-      background-color: #c5c0c0;
-    }
-
-    .form label {
-      display: inline-block;
-      width: 200px;
-    }
-
-    .form input[type="text"] {
-      width: 300px;
-    }
-
-    .save-button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
-    .back-button {
-      padding: 10px;
-      color: black;
+      background-color: #3984ff;
       border: none;
-      cursor: pointer;
-      width: 100px;
-      margin-right: 10px;
+      height: 50px;
+      font-weight: bold;
     }
 
-    .save-button {
-      padding: 10px;
-      color: black;
-      border: none;
-      cursor: pointer;
-      width: 100px;
-      margin-right: 10px;
+    .form-wrapper {
+        background-color: lightgray;
     }
 
-    .reset-button{
-      padding: 10px;
-      color: black;
-      border: none;
-      cursor: pointer;
-      width: 100px;
-    }
+input[type="text"] {
+width:900px; 
+}
+input[type="number"] {
+  width: 400px; 
+}
+input[type="tel"] {
+  width: 400px; 
+}
+input[type="email"] {
+  width: 400px; 
+}
 
-    .form-container {
-        width: 400px;
-        margin: 0 auto;
-    }
-
-    .form-section {
-        margin-bottom: 20px;
-    }
-
-    .form-section h2 {
-        margin-top: 0;
-        font-size: 18px;
-        padding: 10px;
-    }
-
-
-    .marriage-info-header {
+select[id="gender"] {
+  width: 406px;
+}
+select[id="address"] {
+  width: 406px;
+}
+.three-button {
+  text-align: right;
+  border: none;
+  background-color: white;
+}
+label {
+  width: 100px; 
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.marriage-info-header {
         background-color: #A0DDCA;
         color: black;
+        border-style: solid;
+        text-align: center;
+
     }
 
     .proposal-info-header {
         background-color: #A0DDCA;
         color: black;
+        border-style: solid;
+        text-align: center;
     }
-
     .form-label {
         display: inline-block;
         width: 150px;
     }
-
-    .form-input {
-        width: 200px;
-        padding: 5px;
-    }
-
-    .form-submit {
-        margin-top: 10px;
-    }
-
-    .form-container {
-      margin-top: 20px;
-      background-color: rgba(203, 220, 247, 0.75);
-      border: 1px solid black;
-      padding: 10px;
-    }
-    .button.applicant-info {
-      background-color: #a0c1fb;
-    }
-
-    .button.spouse-info {
-      background-color: #a0c1fb;
-    }
-
-    .button.marriage-info {
-      background-color: #3984ff;
-    }
-
-</style>
-</head>
+  </style>
 
 <script>
-    // Load saved data
-    window.addEventListener("DOMContentLoaded", function() {
-      var formData = JSON.parse(localStorage.getItem("marriageFormData"));
-      if (formData) {
-        document.getElementById("requestDate").value = formData.requestDate || "";
-        document.getElementById("applicantName").value = formData.applicantName || "";
-        document.getElementById("spouseName").value = formData.spouseName || "";
-        document.getElementById("marriageVenue").value = formData.marriageVenue || "";
-        document.getElementById("state").value = formData.state || "";
-        document.getElementById("engagementDate").value = formData.engagementDate || "";
-        document.getElementById("dowery").value = formData.dowery || "";
-        document.getElementById("dowery-type").value = formData.doweryType || "";
-        document.getElementById("wedding-gift").value = formData.weddingGift || "";
-        document.getElementById("engagement-venue").value = formData.engagementVenue || "";
-      }
-    });
-
-    // Save data
-    function saveForm() {
-      var formData = {
-        requestDate: document.getElementById("requestDate").value,
-        applicantName: document.getElementById("applicantName").value,
-        spouseName: document.getElementById("spouseName").value,
-        marriageVenue: document.getElementById("marriageVenue").value,
-        state: document.getElementById("state").value,
-        engagementDate: document.getElementById("engagementDate").value,
-        dowery: document.getElementById("dowery").value,
-        doweryType: document.getElementById("dowery-type").value,
-        weddingGift: document.getElementById("wedding-gift").value,
-        engagementVenue: document.getElementById("engagement-venue").value
-      };
-
-      localStorage.setItem("marriageFormData", JSON.stringify(formData));
-      alert("Form Saved!");
-    }
-
-    function resetForm() {
-      var form = document.getElementById("marriageForm");
-      form.reset();
-      localStorage.removeItem("marriageFormData");
-    }
+  function showPopup() {
+    alert('Proof Of Payment Downloaded');
+    var popup = window.open("", "DownloadPopup", "width=400,height=200");
+    
+    popup.document.write("<h2>PROOF OF PAYMENT</h2>");
+    popup.document.write("<p>Receipt : Total PAyment RM120</p>");
+  }
 </script>
 
-
 <body>
-    <div class="header">
-        <div class="banner" style="margin:0 auto; text-align:center;">
-          <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+  <div class="header">
+      <div class="banner"style="margin:0 auto; text-align:center;">
+        <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
         </div>
-    </div>
-    <div class="body">
-        <div class="menu">
-          <ul>
-            <li><a href="#">User Profile</a></li>
-            <li><a href="#">Preparation Course Registration</a></li>
-            <li><a href="#">Marriage Request</a></li>
-            <li><a href="#">Marriage Registration</a></li>
-            <li><a href="#">Collection Certificate and Card Nikah</a></li>
-            <li><a href="#">Marriage Consultion</a></li>
-            <li><a href="#">Log Out</a></li>
-          </ul>
-        </div>
+      </div>
+  <div class="body">
+      <div class="menu">
+        <ul>
+          <li><a href="#">User Profile</a></li>
+          <li><a href="USERPREPARATIONCOURSEHOMEPAGE.html">Preparation Course Registration</a></li>
+          <li><a href="USERMARRIAGEREQUESTHOMEPAGE.HTML">Marriage Request</a></li>
+          <li><a href="#">Marriage Registration</a></li>
+          <li><a href="#">Collection Certificate and Card Nikah</a></li>
+          <li><a href="#">Marriage Consultion</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
 
-        <div class="form-container">
-            <h2>MARRIAGE REQUEST FORM</h2>
-            <div class="button-container">
-                <button class="button applicant-info">APPLICANT INFORMATION</button>
-                <button class="button spouse-info">SPOUSE INFORMATION</button>
-                <button class="button marriage-info">MARRIAGE INFORMATION</button>
-            </div>
-            <div class="form-section">
-                <h2 class="marriage-info-header">MARRIAGE INFORMATION</h2>
-                <form id="marriageForm">
-                <label class="form-label" for="requestDate">REQUEST DATE:</label>
-                <input class="form-input" type="text" id="requestDate" name="requestDate"><br><br>
-
-                <label class="form-label" for="applicantName">APPLICANT NAME:</label>
-                <input class="form-input" type="text" id="applicantName" name="applicantName"><br><br>
-
-                <label class="form-label" for="spouseName">SPOUSE NAME:</label>
-                <input class="form-input" type="text" id="spouseName" name="spouseName"><br><br>
-
-                <label class="form-label" for="marriageVenue">MARRIAGE VENUE:</label>
-                <input class="form-input" type="text" id="marriageVenue" name="marriageVenue"><br><br>
-
-                <label class="form-label" for="state">STATE:</label>
-                <input class="form-input" type="text" id="state" name="state"><br><br>
-                </form>
-            </div>
-    
-            <div class="form-section">
-                <h2 class="proposal-info-header">INFORMATION PROPOSAL</h2>
-                <form id="marriageForm">
-                <label class="form-label" for="engagementDate">DATE OF ENGAGEMENT:</label>
-                <input class="form-input" type="text" id="engagementDate" name="engagementDate"><br><br>
-
-                <label class="form-label" for="dowery">DOWERY:</label>
-                <input class="form-input" type="text" id="dowery" name="dowery"><br><br>
-
-                <label class="form-label" for="dowery-type">TYPE OF DOWERY:</label>
-                <input class="form-input" type="text" id="dowery-type" name="dowery-type"><br><br>
-
-                <label class="form-label" for="wedding-gift">WEDDING GIFT:</label>
-                <input class="form-input" type="text" id="wedding-gift" name="wedding-gift"><br><br>
-
-                <label class="form-label" for="engagement-venue">ENGAGEMENT VENUE:</label>
-                <input class="form-input" type="text" id="engagement-venue" name="engagement-venue"><br><br>
-                </form>
-            </div>
-    
-            <div class="save-button-container">
-                <button><a href="C:\Users\LENOVO\Videos\Testing folder\USERMARRIAGEREQUESTSPOUSEINTERFACE.html" class="back-button" onclick="backForm()">Back</button></a>
-                  <button><a href="C:\Users\LENOVO\Videos\Testing folder\USERMARRIAGEREQUESTMARRIAGEINTERFACE2.HTML" class="save-button" onclick="saveForm()">Save</button></a>
-                  <button class="reset-button" onclick="resetForm()">Reset</button>
+      <table>
+        <thead>
+          <tr>
+              <th colspan="1" class="HeaderText">SESSION INFORMATION</th>
+          </tr>
+          <tr>
+            <td colspan="5" class="button-input">
+              <div class="form-group" style="background-color: white;">
+                  <button class="button applicant-info">APPLICANT INFORMATION</button>
+                  <button class="button spouse-info">SPOUSE INFORMATION</button>
+                  <button class="button marriage-info">MARRIAGE INFORMATION</button>
               </div>
-        </div>
+            </td>
+          </tr>
+        </thead>
 
-    </div>
-</body>
-</html>
+
+        <tbody>
+          <tr>
+              <td colspan="1">            
+                <div class="form-wrapper">
+                      <div class="form-section">
+                        <h2 class="marriage-info-header">MARRIAGE INFORMATION</h2>
+                        <form id="marriageForm">
+                        <label class="form-label" for="requestDate">REQUEST DATE:</label>
+                        <input class="form-input" type="text" id="requestDate" name="requestDate"><br><br>
+        
+                        <label class="form-label" for="applicantName">APPLICANT NAME:</label>
+                        <input class="form-input" type="text" id="applicantName" name="applicantName"><br><br>
+        
+                        <label class="form-label" for="spouseName">SPOUSE NAME:</label>
+                        <input class="form-input" type="text" id="spouseName" name="spouseName"><br><br>
+        
+                        <label class="form-label" for="marriageVenue">MARRIAGE VENUE:</label>
+                        <input class="form-input" type="text" id="marriageVenue" name="marriageVenue"><br><br>
+        
+                        <label class="form-label" for="state">STATE:</label>
+                        <input class="form-input" type="text" id="state" name="state"><br><br>
+                        </form>
+                    </div>
+            
+                    <div class="form-section">
+                        <h2 class="proposal-info-header">INFORMATION PROPOSAL OF ENGAGEMENT</h2>
+                        <form id="marriageForm">
+                        <label class="form-label" for="engagementDate">DATE OF ENGAGEMENT:</label>
+                        <input class="form-input" type="text" id="engagementDate" name="engagementDate"><br><br>
+        
+                        <label class="form-label" for="dowery">DOWERY:</label>
+                        <input class="form-input" type="text" id="dowery" name="dowery"><br><br>
+        
+                        <label class="form-label" for="dowery-type">TYPE OF DOWERY:</label>
+                        <input class="form-input" type="text" id="dowery-type" name="dowery-type"><br><br>
+        
+                        <label class="form-label" for="wedding-gift">WEDDING GIFT:</label>
+                        <input class="form-input" type="text" id="wedding-gift" name="wedding-gift"><br><br>
+        
+                        <label class="form-label" for="engagement-venue">ENGAGEMENT VENUE:</label>
+                        <input class="form-input" type="text" id="engagement-venue" name="engagement-venue"><br><br>
+                        </form>
+                    </div>
+                </div>
+              </td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td colspan="2" class="three-button">
+              <button><a href="C:\Users\LENOVO\Videos\Testing folder\USERMARRIAGEREQUESTSPOUSEINTERFACE.html" class="back-button" onclick="backForm()">Back</button></a>
+              <button><a href="C:\Users\LENOVO\Videos\Testing folder\USERMARRIAGEREQUESTMARRIAGEINTERFACE2.HTML" class="save-button" onclick="saveForm()">Save</button></a>
+              <button class="reset-button" onclick="resetForm()">Reset</button>
+            </div>
+          </tr>
+        </tbody>
+
+      </table>
+      </div>
+
+
+      <script>
+
+        window.addEventListener("DOMContentLoaded", function() {
+          var formData = JSON.parse(localStorage.getItem("marriageFormData"));
+          if (formData) {
+            document.getElementById("requestDate").value = formData.requestDate || "";
+            document.getElementById("applicantName").value = formData.applicantName || "";
+            document.getElementById("spouseName").value = formData.spouseName || "";
+            document.getElementById("marriageVenue").value = formData.marriageVenue || "";
+            document.getElementById("state").value = formData.state || "";
+            document.getElementById("engagementDate").value = formData.engagementDate || "";
+            document.getElementById("dowery").value = formData.dowery || "";
+            document.getElementById("dowery-type").value = formData.doweryType || "";
+            document.getElementById("wedding-gift").value = formData.weddingGift || "";
+            document.getElementById("engagement-venue").value = formData.engagementVenue || "";
+          }
+        });
+
+        function saveForm() {
+          var formData = {
+            requestDate: document.getElementById("requestDate").value,
+            applicantName: document.getElementById("applicantName").value,
+            spouseName: document.getElementById("spouseName").value,
+            marriageVenue: document.getElementById("marriageVenue").value,
+            state: document.getElementById("state").value,
+            engagementDate: document.getElementById("engagementDate").value,
+            dowery: document.getElementById("dowery").value,
+            doweryType: document.getElementById("dowery-type").value,
+            weddingGift: document.getElementById("wedding-gift").value,
+            engagementVenue: document.getElementById("engagement-venue").value
+          };
+    
+          localStorage.setItem("marriageFormData", JSON.stringify(formData));
+          alert("Form Saved!");
+        }
+    
+        function resetForm() {
+          var form = document.getElementById("marriageForm");
+          form.reset();
+          localStorage.removeItem("marriageFormData");
+        }
+    </script>
+
+      </body>
+      </html>

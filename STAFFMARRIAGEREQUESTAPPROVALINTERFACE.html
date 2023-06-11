@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+  <title>Staff Profile</title>
+</head>
+<body>
+  <style>
+    body{
+      display:block;
+    }
+    .body{
+      margin-top: 50px;
+      margin-left: 40px;
+      display:flex;
+    }
+    .menu{
+      width:25%;
+    }
+    .menu ul{
+      margin-top: 20px;
+    }
+    .menu li{
+      background: rgba(250, 214, 146, 0.75);
+      border: 1px solid black;
+      padding:10px;
+      list-style:none;
+    }
+    .menu li:hover{
+      background: rgba(250, 186, 69, 0.75);
+    }
+    .menu .StaffProfile{
+      width: 100%;
+      background: rgba(234, 177, 71, 0.75);
+    }
+    .menu .logOut{
+      background: rgba(227, 164, 47, 0.73);
+      font-weight:bold ;
+    }
+    a{
+      color:black;
+      text-decoration: none;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+
+  td {
+    padding: 13px;
+  }
+  th {
+    background-color: lightgray;
+    color: black;
+  }
+  .HeaderText {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: none;
+    background: #ffc860;
+    font-size: medium;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .HeaderText-1 {
+    text-align: left;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border: none;
+    background: #A3B7DB;
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .HeaderText-2 {
+    text-align: right;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border: none;
+    background: #A3B7DB;
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: none;
+      background-color: lightgray;
+    }
+    .button-link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    }
+    .button-input {
+    border: none;
+    background: white;
+  }
+  .button.applicant-info {
+      background-color: #a0c1fb;
+      border: none;
+      height: 50px;
+      font-weight: bold;
+    }
+
+    .button.spouse-info {
+      background-color: #a0c1fb;
+      border: none;
+      margin-left: 285px;
+      margin-right: 285px;
+      height: 50px;
+      font-weight: bold;
+    }
+
+    .button.marriage-info {
+      background-color: #3984ff;
+      border: none;
+      height: 50px;
+      font-weight: bold;
+    }
+
+    .form-wrapper {
+        background-color: lightgray;
+    }
+
+input[type="text"] {
+width:70%; 
+}
+input[type="number"] {
+  width: 400px; 
+}
+input[type="tel"] {
+  width: 400px; 
+}
+input[type="email"] {
+  width: 400px; 
+}
+
+select[id="gender"] {
+  width: 406px;
+}
+select[id="address"] {
+  width: 406px;
+}
+.three-button {
+  text-align: right;
+  border: none;
+  background-color: white;
+}
+label {
+  width: 100px; 
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.marriage-info-header {
+        background-color: #A0DDCA;
+        color: black;
+        border-style: solid;
+        text-align: center;
+
+    }
+
+    .proposal-info-header {
+        background-color: #A0DDCA;
+        color: black;
+        border-style: solid;
+        text-align: center;
+    }
+    .form-label {
+      display: inline-table;
+        width: 150px;
+    }
+    .lightgray {
+    color: black;
+  }
+  .black {
+    color: black;
+  }
+  button {
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    font-weight:bold;
+    border: none;
+  background-color: #ffc860;
+  }
+  button:hover{
+  background-color: #dca135;
+  }
+  .three-button {
+  text-align: right;
+  border: none;
+  background-color: white;
+}
+
+.reject-button {
+      background-color: red;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      padding: 4px 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .reject-button {
+      background-color: lightcoral;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      padding: 4px 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .approve-button {
+      background-color: lightgreen;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      padding: 4px 4px;
+      font-size: 15px;
+      cursor: pointer;  
+    }
+  </style>
+
+<script>
+
+</script>
+
+<body>
+  <div class="header">
+      <div class="banner"style="margin:0 auto; text-align:center;">
+        <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+        </div>
+      </div>
+  <div class="body">
+      <div class="menu">
+        <ul>
+          <li><a href="#">User Profile</a></li>
+          <li><a href="STAFFPREPARATIONCOURSEINTERFACE.html">Preparation Course Registration</a></li>
+          <li><a href="STAFFMARRIAGEREQUESTINTERFACE.html">Marriage Request</a></li>
+          <li><a href="#">Marriage Registration</a></li>
+          <li><a href="#">Collection Certificate and Card Nikah</a></li>
+          <li><a href="#">Marriage Consultion</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+              <th colspan="1" class="HeaderText">APPLICANT</th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+          <tr>
+              <td colspan="1">            
+                <div class="form-wrapper">
+                  <form>                
+                      <div class="form-group" style="float:right;">
+                        <label for="age">AGE:</label>
+                        <input type="text" id="age">
+                        </div>
+
+                      <div class="form-group">
+                        <label for="name">NAME:</label>
+                        <input type="text" id="name">
+                        </div>
+
+                        
+                        <div class="form-group" style="float:right;">
+                          <label for="gender">GENDER:</label>
+                          <input type="text" id="gender">
+                          </div>
+  
+                        <div class="form-group">
+                        <label for="identity">IC NO.:</label>
+                        <input type="text" id="identity">
+                        </div>
+
+                        
+                        <div class="form-group" style="float:right;">
+                          <label for="race">RACE:</label>
+                          <input type="text" id="race">
+                          </div>
+  
+                        <div class="form-group">
+                        <label for="dob">DATE OF BIRTH:</label>
+                        <input type="text" id="dob">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="email">EMAIL:</label>
+                        <input type="text" id="email">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="address">ADDRESS:</label>
+                        <input type="text" id="address">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="phone">PHONE NUMBER:</label>
+                        <input type="text" id="phone">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="education">EDUCATION LEVEL:</label>
+                        <input type="text" id="education">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="employment">EMPLOYMENT:</label>
+                        <input type="text" id="employment">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="income">INCOME:</label>
+                        <input type="text" id="income">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="workAddress">WORK ADDRESS:</label>
+                        <input type="text" id="workAddress">
+                        </div>
+
+                        
+                        <div class="form-group" style="float:right;">
+                          <label for="officePhone">PHONE NUMBER (OFFICE):</label>
+                          <input type="text" id="officePhone">
+                          </div>
+  
+                        <div class="form-group">
+                        <label for="maritalStatus">MARITAL STATUS:</label>
+                        <input type="text" id="maritalStatus">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="courseCertificate">PRE MARRIAGE COURSE CERTIFICATE NO:</label>
+                        <input type="text" id="courseCertificate">
+                        </div>
+                    </div>
+
+                    </fieldset>
+                  </form>
+                </div></td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+              <th colspan="1" class="HeaderText">SPOUSE INFORMATION</th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+          <tr>
+              <td colspan="1">            
+                <div class="form-wrapper">
+                  <form>
+                    <div>
+                        
+                      
+                      <div class="form-group" style="float:right;">
+                        <label for="age">AGE:</label>
+                        <input type="text" id="age">
+                        </div>
+
+                      <div class="form-group">
+                        <label for="name">NAME:</label>
+                        <input type="text" id="name">
+                        </div>
+
+                        
+                        <div class="form-group" style="float:right;">
+                          <label for="gender">GENDER:</label>
+                          <input type="text" id="gender">
+                          </div>
+  
+                        <div class="form-group">
+                        <label for="identity">IC NO.:</label>
+                        <input type="text" id="identity">
+                        </div>
+
+                        
+                        <div class="form-group" style="float:right;">
+                          <label for="race">RACE:</label>
+                          <input type="text" id="race">
+                          </div>
+  
+                        <div class="form-group">
+                        <label for="dob">DATE OF BIRTH:</label>
+                        <input type="text" id="dob">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="email">EMAIL:</label>
+                        <input type="text" id="email">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="address">ADDRESS:</label>
+                        <input type="text" id="address">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="phone">PHONE NUMBER:</label>
+                        <input type="text" id="phone">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="education">EDUCATION LEVEL:</label>
+                        <input type="text" id="education">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="employment">EMPLOYMENT:</label>
+                        <input type="text" id="employment">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="income">INCOME:</label>
+                        <input type="text" id="income">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="workAddress">WORK ADDRESS:</label>
+                        <input type="text" id="workAddress">
+                        </div>
+
+                        
+                        <div class="form-group" style="float:right;">
+                          <label for="officePhone">PHONE NUMBER (OFFICE):</label>
+                          <input type="text" id="officePhone">
+                          </div>
+  
+                        <div class="form-group">
+                        <label for="maritalStatus">MARITAL STATUS:</label>
+                        <input type="text" id="maritalStatus">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="courseCertificate">PRE MARRIAGE COURSE CERTIFICATE NO:</label>
+                        <input type="text" id="courseCertificate">
+                        </div>
+                    </div>
+
+                    </fieldset>
+                  </form>
+                </div></td>
+          </tr>
+        </tbody>
+
+        <thead>
+          <tr>
+              <th colspan="1" class="HeaderText">MARRIAGE INFORMATION</th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+          <tr>
+              <td colspan="1">            
+                <div class="form-wrapper">
+                      <div class="form-section">
+                        <h2 class="marriage-info-header">MARRIAGE INFORMATION</h2>
+                        <form id="marriageForm">
+                        <label class="form-label" for="requestDate">REQUEST DATE:</label>
+                        <input class="form-input" type="text" id="requestDate" name="requestDate"><br><br>
+        
+                        <label class="form-label" for="applicantName">APPLICANT NAME:</label>
+                        <input class="form-input" type="text" id="applicantName" name="applicantName"><br><br>
+        
+                        <label class="form-label" for="spouseName">SPOUSE NAME:</label>
+                        <input class="form-input" type="text" id="spouseName" name="spouseName"><br><br>
+        
+                        <label class="form-label" for="marriageVenue">MARRIAGE VENUE:</label>
+                        <input class="form-input" type="text" id="marriageVenue" name="marriageVenue"><br><br>
+        
+                        <label class="form-label" for="state">STATE:</label>
+                        <input class="form-input" type="text" id="state" name="state"><br><br>
+                        </form>
+                    </div>
+            
+                    <div class="form-section">
+                        <h2 class="proposal-info-header">INFORMATION PROPOSAL OF ENGAGEMENT</h2>
+                        <form id="marriageForm">
+                        <label class="form-label" for="engagementDate">DATE OF ENGAGEMENT:</label>
+                        <input class="form-input" type="text" id="engagementDate" name="engagementDate"><br><br>
+        
+                        <label class="form-label" for="dowery">DOWERY:</label>
+                        <input class="form-input" type="text" id="dowery" name="dowery"><br><br>
+        
+                        <label class="form-label" for="dowery-type">TYPE OF DOWERY:</label>
+                        <input class="form-input" type="text" id="dowery-type" name="dowery-type"><br><br>
+        
+                        <label class="form-label" for="wedding-gift">WEDDING GIFT:</label>
+                        <input class="form-input" type="text" id="wedding-gift" name="wedding-gift"><br><br>
+        
+                        <label class="form-label" for="engagement-venue">ENGAGEMENT VENUE:</label>
+                        <input class="form-input" type="text" id="engagement-venue" name="engagement-venue"><br><br>
+                        </form>
+                    </div>
+                </div>
+              </td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+              <th colspan="1" class="HeaderText">SESSION INFORMATION</th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+          <tr>
+              <td colspan="1">            
+                <div class="form-wrapper">
+                      <div class="form-section">
+                        <h2 class="marriage-info-header">WALI INFORMATION</h2>
+                        <form id="marriageForm">
+                          <label class="form-label" for="wali-name">WALI NAME:</label>
+                          <input class="form-input" type="text" id="wali-name" name="wali-name"><br><br>
+          
+                          <label class="form-label" for="wali-ic">WALI IDENTITY CARD NUMBER:</label>
+                          <input class="form-input" type="text" id="wali-ic" name="wali-ic"><br><br>
+          
+                          <label class="form-label" for="wali-age">WALI AGE:</label>
+                          <input class="form-input" type="text" id="wali-age" name="wali-age"><br><br>
+          
+                          <label class="form-label" for="wali-rel">WALI RELATIONSHIP:</label>
+                          <input class="form-input" type="text" id="wali-rel" name="wali-rel"><br><br>
+                        </form>
+                    </div>
+            
+                    <div class="form-section">
+                        <h2 class="proposal-info-header">WITNESS INFORMATION (To confirm the application form for marriage)</h2>
+                        <form id="marriageForm">
+                          <label class="form-label" for="witness-name">WITNESS NAME (1):</label>
+                          <input class="form-input" type="text" id="witness1-name" name="witness-name"><br><br>
+          
+                          <label class="form-label" for="witness-id">WITNESS IDENTITY CARD NUMBER:</label>
+                          <input class="form-input" type="text" id="witness1-id" name="witness-id"><br><br>
+          
+                          <label class="form-label" for="witness-name">WITNESS NAME (2):</label>
+                          <input class="form-input" type="text" id="witness2-name" name="witness-name"><br><br>
+          
+                          <label class="form-label" for="witness-id">WITNESS IDENTITY CARD NUMBER:</label>
+                          <input class="form-input" type="text" id="witness2-id" name="witness-id"><br><br>
+          
+                          <label class="form-label" for="witness-name">WITNESS NAME (3):</label>
+                          <input class="form-input" type="text" id="witness3-name" name="witness-name"><br><br>
+          
+                          <label class="form-label" for="witness-id">WITNESS IDENTITY CARD NUMBER:</label>
+                          <input class="form-input" type="text" id="witness3-id" name="witness-id"><br><br>
+                        </form>
+                    </div>
+                </div>
+              </td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td colspan="2" class="three-button">
+              <button><a href="STAFFPARTICIPANTINTERFACE.html" class="submit-button" type="button" onclick="submitForm()">Submit</a></button>
+              <button class="approve-button" type="button" onclick="approveForm()">APPROVE</button>
+              <button class="reject-button" type="button" onclick="rejectForm()">REJECT</button>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+      
+      </div>
+
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <script>
+        function approveForm() {
+          var approveButton = document.querySelector(".approve-button");
+          var submitButton = document.querySelector(".submit-button");
+          approveButton.style.display = "inline-block";
+          submitButton.style.display = "inline-block";
+          
+          var rejectButton = document.querySelector(".reject-button");
+          rejectButton.style.display = "none";
+          
+          alert("Form approved");
+        }
+        
+        function rejectForm() {
+          var rejectButton = document.querySelector(".reject-button");
+          var submitButton = document.querySelector(".submit-button");
+          rejectButton.style.display = "inline-block";
+          submitButton.style.display = "inline-block";
+          
+          var approveButton = document.querySelector(".approve-button");
+          approveButton.style.display = "none";
+          
+          alert("Form rejected");
+        }
+        
+        function submitForm() {
+          alert("Form submitted");
+        }
+      </script>
+
+      </body>
+      </html>

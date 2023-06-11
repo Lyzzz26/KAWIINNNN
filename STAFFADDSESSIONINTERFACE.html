@@ -46,147 +46,228 @@
       color:black;
       text-decoration: none;
     }
-    .StaffInfo{
-      margin: 0 auto;
-      width: 700px;
+    .box {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    float: left;
+    padding-left: 10px;
+    background: #FFC860;
     }
-    .StaffInfo table{
-      margin: auto;
-      margin-top:30px;
-      width:100%;
-      border-collapse: collapse;
-      border:solid 1px black;
-      background-color: #D9D9D9;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .StaffInfo .HeaderText{
-      font-weight:bolder ;
-      background: rgba(255, 175, 24, 0.69);
-    }
-    .StaffInfo .HeaderText{
-      font-size: 30px;
-      text-align: center;
-    }
-    .StaffInfo table td{
-      font-size: 18px;
-      padding:10px 30px;
-    }
-    .edit{
-      margin: 0 auto;
-      width:20%;
-      margin-top: 20px;
-    }
-    .edit button{
-      padding: 13px 13px;
-      background: rgba(255, 186, 121, 0.75);
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 20px;
-      cursor:pointer;
-    }
-    .form-container {
+
+
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+
+  th {
+    background-color: lightgray;
+    color: black;
+  }
+  .HeaderText {
+    text-align: left;
+    padding-bottom: 30px;
+    padding-top: 30PX;
+    border: none;
+    background: #FFC860;
+    font-size: medium;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: x-large;
+  }
+
+    .form-group {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-    }
-    
-    .form-header{
-        background-color: #FFC860;
-        padding: 15px;
-    }
-    .form-section {
-      margin-bottom: 20px;
-      background-color: lightgray;
-    }
-    
-    .form-section h2 {
-      text-align: center;
-    }
-    
-    .form-section .form-group {
       margin-bottom: 10px;
     }
-    
-    .form-section .form-group label {
-      display: block;
-      margin-bottom: 5px;
+    .button-link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
     }
-    
-    .form-section .form-group input {
-      width: 300px;
-      padding: 5px;
+    .button-input {
+    border: none;
+    background: #FFC860;
+  }
+
+
+  .reject-button {
+      background-color: red;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      padding: 4px 4px;
+      font-size: 15px;
+      cursor: pointer;
     }
-    
-    .submit-button {
-      text-align: center;
-      background-color: #f0bb8b;
+
+    .reject-button {
+      background-color: lightcoral;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      padding: 4px 4px;
+      font-size: 15px;
+      cursor: pointer;
     }
+    .approve-button {
+      background-color: lightgreen;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      padding: 4px 4px;
+      font-size: 15px;
+      cursor: pointer;  
+    }
+    .form-wrapper {
+        background-color: lightgray;
+    }
+    fieldset {
+      border: none;
+    }
+
+input[type="text"] {
+width: 900px; 
+}
+input[type="number"] {
+  width: 400px; 
+}
+input[type="tel"] {
+  width: 400px; 
+}
+input[type="email"] {
+  width: 400px; 
+}
+
+select[id="gender"] {
+  width: 406px;
+}
+select[id="address"] {
+  width: 406px;
+}
+.three-button {
+  text-align: right;
+  border: none;
+  background-color: lightgray;
+  width: 20px;
+}
+label {
+  width: 100px; 
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+
+}
   </style>
 
-  <script>
-      function submitForm() {
-      alert('Session Added!');
-    }   
-
+<script>
+  function showPopup() {
+    alert('Proof Of Payment Downloaded');
+    var popup = window.open("", "DownloadPopup", "width=400,height=200");
+    
+    popup.document.write("<h2>PROOF OF PAYMENT</h2>");
+    popup.document.write("<p>Receipt : Total PAyment RM120</p>");
+  }
 </script>
 
+<body>
   <div class="header">
-  <div class="banner"style="margin:0 auto; text-align:center;">
-    <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
-  </div>
+      <div class="banner"style="margin:0 auto; text-align:center;">
+        <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+        </div>
+      </div>
   <div class="body">
-    <div class="menu">
-      <ul>
-        <li><a href="#">Staff Profile</a></li>
-        <li><a href="#">Preparation Course Registration</a></li>
-        <li><a href="#">Marriage Request</a></li>
-        <li><a href="#">Marriage Registration</a></li>
-        <li><a href="#">Collection Certificate and Card Nikah</a></li>
-        <li><a href="#">Marriage Consultion</a></li>
-        <li><a href="#">Log Out</a></li>
-      </ul>
-    </div>
-  <div class="form-container">
-    <div class="form-header">
-      <h2>SESSION INFORMATION</h2>
-    </div>
+      <div class="menu">
+        <ul>
+          <li><a href="#">User Profile</a></li>
+          <li><a href="STAFFPREPARATIONCOURSEINTERFACE.html">Preparation Course Registration</a></li>
+          <li><a href="STAFFMARRIAGEREQUESTINTERFACE.html">Marriage Request</a></li>
+          <li><a href="#">Marriage Registration</a></li>
+          <li><a href="#">Collection Certificate and Card Nikah</a></li>
+          <li><a href="#">Marriage Consultion</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
 
-    <div class="form-section">
-      <div class="form-group">
-        <label for="organizer">ORGANIZER:</label>
-        <input type="text" id="organizer" name="organizer">
+      <table>
+        <thead>
+          <tr>
+              <th colspan="2" class="HeaderText">SESSION INFORMATION</th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+          <tr>
+              <td colspan="2">            
+                <div class="form-wrapper">
+                  <form>
+                    <fieldset>
+                                  
+                      <div class="form-group">
+                        <label for="organizer">ORGANIZER:</label>
+                        <input type="text" id="organizer" name="organizer">
+                      </div>
+                      <div class="form-group">
+                        <label for="date">DATE:</label>
+                        <input type="text" id="date" name="date">
+                      </div>
+                      <div class="form-group">
+                        <label for="location">LOCATION:</label>
+                        <input type="text" id="location" name="location">
+                      </div>
+                      <div class="form-group">
+                        <label for="officer">OFFICER:</label>
+                        <input type="text" id="officer" name="officer">
+                      </div>
+                      <div class="form-group">
+                        <label for="capacity">CAPACITY:</label>
+                        <input type="text" id="capacity" name="capacity">
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">PHONE NUMBER:</label>
+                        <input type="text" id="phone" name="phone">
+                      </div>
+                      <div class="form-group">
+                        <label for="briefing">BRIEFING SERIES:</label>
+                        <textarea id="briefing" name="briefing"></textarea>
+                      </div>
+                      <div class="three-button">
+                        <button id="submit-button" type="button" onclick="submitForm()">Submit</button>
+                      </div>
+
+
+                    </fieldset>
+                  </form>
+                </div>
+              </td>
+          </tr>
+       </tbody>
+      </table>
       </div>
-      <div class="form-group">
-        <label for="date">DATE:</label>
-        <input type="text" id="date" name="date">
-      </div>
-      <div class="form-group">
-        <label for="location">LOCATION:</label>
-        <input type="text" id="location" name="location">
-      </div>
-      <div class="form-group">
-        <label for="officer">OFFICER:</label>
-        <input type="text" id="officer" name="officer">
-      </div>
-      <div class="form-group">
-        <label for="capacity">CAPACITY:</label>
-        <input type="text" id="capacity" name="capacity">
-      </div>
-      <div class="form-group">
-        <label for="phone">PHONE NUMBER:</label>
-        <input type="text" id="phone" name="phone">
-      </div>
-      <div class="form-group">
-        <label for="briefing">BRIEFING SERIES:</label>
-        <textarea id="briefing" name="briefing"></textarea>
-      </div>
-    </div>
-    <div class="submit-button">
-      <button><a a href="C:\Users\LENOVO\Videos\Testing folder\STAFFSESSION,DELETE,AFTERDELETEINTERFACE.html" onclick="submitForm()" type="submit">Submit</button>
-    </div>
-  </div>
-    </div>
-    </div>
-    </body>
-    </html>
+
+
+      <script>
+        function submitForm() {
+          alert("Form submitted");
+        }
+        document.getElementById("submit-button").addEventListener("click", function() {
+      window.location.href = "STAFFSESSION,DELETE,AFTERDELETEINTERFACE.html";
+    });
+      </script>
+
+      </body>
+      </html>

@@ -1,256 +1,369 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-    body {
-      display: block;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+  <title>Staff Profile</title>
+</head>
+<body>
+  <style>
+    body{
+      display:block;
     }
-
-    .body {
+    .body{
       margin-top: 50px;
-      margin-left: 40px;
-      display: flex;
+      margin-left: 10px;
+      display:flex;
     }
 
-    .menu ul {
+    .menu ul{
       margin-top: 20px;
     }
-
-    .menu li {
+    .menu li{
       background: rgba(203, 220, 247, 0.75);
       border: 1px solid black;
-      padding: 10px;
-      list-style: none;
+      padding:10px;
+      list-style:none;
     }
-
-    .menu li:hover {
+    .menu li:hover{
       background-color: rgba(98, 158, 255, 0.75);
     }
 
-    .menu .logOut {
-      background: rgba(129, 156, 206, 0.73);
-      font-weight: bold;
-    }
-
-    a {
-      color: black;
+    a{
+      color:black;
       text-decoration: none;
     }
 
-    .form-container {
-      margin-top: 20px;
-      background-color: rgba(203, 220, 247, 0.75);
-      border: 1px solid black;
-      padding: 10px;
-    }
-
-    .form-container h2 {
-      text-align: center;
-    }
-
-    .button-container {
+    .form-group {
       display: flex;
-      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
       margin-bottom: 10px;
     }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
 
-    .button {
-      background-color: #a0c1fb;
-      border: none;
-      cursor: pointer;
-      flex: 1;
-      margin-right: 10px;
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+
+  td {
+    padding: 13px;
+  }
+  th {
+    background-color: lightgray;
+    color: black;
+  }
+  .HeaderText {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border: none;
+    background: rgba(203, 220, 247, 0.75);
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: none;
+      background-color: lightgray;
     }
-
-    .button.applicant-info {
+    .button-link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    }
+    .button-input {
+    border: none;
+    background: white;
+  }
+  .button.applicant-info {
       background-color: #3984ff;
+      border: none;
+      height: 50px;
+      font-weight: bold;
     }
 
     .button.spouse-info {
       background-color: #a0c1fb;
+      border: none;
+      margin-left: 285px;
+      margin-right: 285px;
+      height: 50px;
+      font-weight: bold;
     }
 
     .button.marriage-info {
       background-color: #a0c1fb;
-    }
-
-    .form {
-      background-color: #c5c0c0;
-    }
-
-    .form label {
-      display: inline-block;
-      width: 200px;
-    }
-
-    .form input[type="text"] {
-      width: 300px;
-    }
-
-    .save-button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
-    .save-button {
-      padding: 10px;
-      color: black;
       border: none;
-      cursor: pointer;
-      width: 100px;
-      margin-right: 10px;
+      height: 50px;
+      font-weight: bold;
     }
 
-    .reset-button{
-      padding: 10px;
-      color: black;
-      border: none;
-      cursor: pointer;
-      width: 100px;
+    .form-wrapper {
+        background-color: lightgray;
     }
-</style>
-</head>
+    fieldset {
+      border: none;
+    }
+
+input[type="text"] {
+width: 400px; 
+}
+input[type="number"] {
+  width: 400px; 
+}
+input[type="tel"] {
+  width: 400px; 
+}
+input[type="email"] {
+  width: 400px; 
+}
+
+select[id="gender"] {
+  width: 406px;
+}
+select[id="address"] {
+  width: 406px;
+}
+.three-button {
+  text-align: right;
+  border: none;
+  background-color: white;
+}
+label {
+  width: 100px; 
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+
+}
+  </style>
 
 <script>
-    // Load saved data
-    window.addEventListener("DOMContentLoaded", function() {
-      var formData = JSON.parse(localStorage.getItem("marriageFormData"));
-      if (formData) {
-        document.getElementById("name").value = formData.name || "";
-        document.getElementById("identity").value = formData.identity || "";
-        document.getElementById("dob").value = formData.dob || "";
-        document.getElementById("email").value = formData.email || "";
-        document.getElementById("address").value = formData.address || "";
-        document.getElementById("phone").value = formData.phone || "";
-        document.getElementById("education").value = formData.education || "";
-        document.getElementById("employment").value = formData.employment || "";
-        document.getElementById("income").value = formData.income || "";
-        document.getElementById("workAddress").value = formData.workAddress || "";
-        document.getElementById("maritalStatus").value = formData.maritalStatus || "";
-        document.getElementById("age").value = formData.age || "";
-        document.getElementById("gender").value = formData.gender || "";
-        document.getElementById("race").value = formData.race || "";
-        document.getElementById("officePhone").value = formData.officePhone || "";
-        document.getElementById("courseCertificate").value = formData.courseCertificate || "";
-      }
-    });
-
-    // Save data
-    function saveForm() {
-      var formData = {
-        name: document.getElementById("name").value,
-        identity: document.getElementById("identity").value,
-        dob: document.getElementById("dob").value,
-        email: document.getElementById("email").value,
-        address: document.getElementById("address").value,
-        phone: document.getElementById("phone").value,
-        education: document.getElementById("education").value,
-        employment: document.getElementById("employment").value,
-        income: document.getElementById("income").value,
-        workAddress: document.getElementById("workAddress").value,
-        maritalStatus: document.getElementById("maritalStatus").value,
-        age: document.getElementById("age").value,
-        gender: document.getElementById("gender").value,
-        race: document.getElementById("race").value,
-        officePhone: document.getElementById("officePhone").value,
-        courseCertificate: document.getElementById("courseCertificate").value
-      };
-
-      localStorage.setItem("marriageFormData", JSON.stringify(formData));
-      alert("Form Saved!");
-    }
-
-    function resetForm() {
-          var form = document.getElementById("marriageForm");
-          form.reset();
-          localStorage.removeItem("marriageFormData");
-        }
+  function showPopup() {
+    alert('Proof Of Payment Downloaded');
+    var popup = window.open("", "DownloadPopup", "width=400,height=200");
+    
+    popup.document.write("<h2>PROOF OF PAYMENT</h2>");
+    popup.document.write("<p>Receipt : Total PAyment RM120</p>");
+  }
 </script>
 
 <body>
-    <div class="header">
-        <div class="banner" style="margin:0 auto; text-align:center;">
-          <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+  <div class="header">
+      <div class="banner"style="margin:0 auto; text-align:center;">
+        <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
         </div>
-    </div>
-    <div class="body">
-        <div class="menu">
-          <ul>
-            <li><a href="#">User Profile</a></li>
-            <li><a href="#">Preparation Course Registration</a></li>
-            <li><a href="#">Marriage Request</a></li>
-            <li><a href="#">Marriage Registration</a></li>
-            <li><a href="#">Collection Certificate and Card Nikah</a></li>
-            <li><a href="#">Marriage Consultion</a></li>
-            <li><a href="#">Log Out</a></li>
-          </ul>
-        </div>
+      </div>
+  <div class="body">
+      <div class="menu">
+        <ul>
+          <li><a href="#">User Profile</a></li>
+          <li><a href="USERPREPARATIONCOURSEHOMEPAGE.html">Preparation Course Registration</a></li>
+          <li><a href="USERMARRIAGEREQUESTHOMEPAGE.HTML">Marriage Request</a></li>
+          <li><a href="#">Marriage Registration</a></li>
+          <li><a href="#">Collection Certificate and Card Nikah</a></li>
+          <li><a href="#">Marriage Consultion</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
 
-    <div class="form-container">
-        <h2>MARRIAGE REQUEST FORM</h2>
-        <div class="button-container">
-            <button class="button applicant-info">APPLICANT INFORMATION</button>
-            <button class="button spouse-info">SPOUSE INFORMATION</button>
-            <button class="button marriage-info">MARRIAGE INFORMATION</button>
-        </div>
-        <form id="marriageForm">
-          <div class="form">
-              <label for="name">NAME:</label>
-              <input type="text" id="name">
-              <br>
-              <label for="identity">IDENTITY CARD NO.:</label>
-              <input type="text" id="identity">
-              <br>
-              <label for="dob">DATE OF BIRTH:</label>
-              <input type="text" id="dob">
-              <br>
-              <label for="email">EMAIL:</label>
-              <input type="text" id="email">
-              <br>
-              <label for="address">ADDRESS:</label>
-              <input type="text" id="address">
-              <br>
-              <label for="phone">PHONE NUMBER:</label>
-              <input type="text" id="phone">
-              <br>
-              <label for="education">EDUCATION LEVEL:</label>
-              <input type="text" id="education">
-              <br>
-              <label for="employment">EMPLOYMENT:</label>
-              <input type="text" id="employment">
-              <br>
-              <label for="income">INCOME:</label>
-              <input type="text" id="income">
-              <br>
-              <label for="workAddress">WORK ADDRESS:</label>
-              <input type="text" id="workAddress">
-              <br>
-              <label for="maritalStatus">MARITAL STATUS:</label>
-              <input type="text" id="maritalStatus">
-              <br>
-              <label for="age">AGE:</label>
-              <input type="text" id="age">
-              <br>
-              <label for="gender">GENDER:</label>
-              <input type="text" id="gender">
-              <br>
-              <label for="race">RACE:</label>
-              <input type="text" id="race">
-              <br>
-              <label for="officePhone">PHONE NUMBER (OFFICE):</label>
-              <input type="text" id="officePhone">
-              <br>
-              <label for="courseCertificate">PRE MARRIAGE COURSE CERTIFICATE NO:</label>
-              <input type="text" id="courseCertificate">
-              <br>
-          </div>
-          <div class="save-button-container">
-              <button><a href="C:\Users\LENOVO\Videos\Testing folder\USERMARRIAGEREQUESTSPOUSEINTERFACE.html" class="save-button" onclick="saveForm()">Save</button></a>
-              <button class="reset-button" onclick="resetForm()">Reset</button>
-          </div>
-        </form>
-    </div>
-    </div>
-</body>
-</html>
+      <table>
+        <thead>
+          <tr>
+              <th colspan="1" class="HeaderText">MARRIAGE REQUEST FORM</th>
+          </tr>
+          <tr>
+            <td colspan="5" class="button-input">
+              <div class="form-group" style="background-color: white;">
+                  <button class="button applicant-info">APPLICANT INFORMATION</button>
+                  <button class="button spouse-info">SPOUSE INFORMATION</button>
+                  <button class="button marriage-info">MARRIAGE INFORMATION</button>
+              </div>
+            </td>
+          </tr>
+        </thead>
+
+
+        <tbody>
+          <tr>
+              <td colspan="1">            
+                <div class="form-wrapper">
+                  <form>                
+                      <div class="form-group" style="float:right;">
+                        <label for="age">AGE:</label>
+                        <input type="text" id="age">
+                        </div>
+
+                      <div class="form-group">
+                        <label for="name">NAME:</label>
+                        <input type="text" id="name">
+                        </div>
+
+                        
+                        <div class="form-group" style="float:right;">
+                          <label for="gender">GENDER:</label>
+                          <input type="text" id="gender">
+                          </div>
+  
+                        <div class="form-group">
+                        <label for="identity">IC NO.:</label>
+                        <input type="text" id="identity">
+                        </div>
+
+                        
+                        <div class="form-group" style="float:right;">
+                          <label for="race">RACE:</label>
+                          <input type="text" id="race">
+                          </div>
+  
+                        <div class="form-group">
+                        <label for="dob">DATE OF BIRTH:</label>
+                        <input type="text" id="dob">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="email">EMAIL:</label>
+                        <input type="text" id="email">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="address">ADDRESS:</label>
+                        <input type="text" id="address">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="phone">PHONE NUMBER:</label>
+                        <input type="text" id="phone">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="education">EDUCATION LEVEL:</label>
+                        <input type="text" id="education">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="employment">EMPLOYMENT:</label>
+                        <input type="text" id="employment">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="income">INCOME:</label>
+                        <input type="text" id="income">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="workAddress">WORK ADDRESS:</label>
+                        <input type="text" id="workAddress">
+                        </div>
+
+                        
+                        <div class="form-group" style="float:right;">
+                          <label for="officePhone">PHONE NUMBER (OFFICE):</label>
+                          <input type="text" id="officePhone">
+                          </div>
+  
+                        <div class="form-group">
+                        <label for="maritalStatus">MARITAL STATUS:</label>
+                        <input type="text" id="maritalStatus">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="courseCertificate">PRE MARRIAGE COURSE CERTIFICATE NO:</label>
+                        <input type="text" id="courseCertificate">
+                        </div>
+                    </div>
+
+                    </fieldset>
+                  </form>
+                </div></td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td colspan="2" class="three-button">
+              <div class="save-button-container">
+                <button><a href="C:\Users\LENOVO\Videos\Testing folder\USERMARRIAGEREQUESTSPOUSEINTERFACE.html" class="save-button" onclick="saveForm()">Save</button></a>
+                <button class="reset-button" onclick="resetForm()">Reset</button>
+            </div>
+          </tr>
+        </tbody>
+
+      </table>
+      </div>
+
+
+      <script>
+
+window.addEventListener("DOMContentLoaded", function() {
+  var formData = JSON.parse(localStorage.getItem("marriageFormData"));
+  if (formData) {
+    document.getElementById("name").value = formData.name || "";
+    document.getElementById("identity").value = formData.identity || "";
+    document.getElementById("dob").value = formData.dob || "";
+    document.getElementById("email").value = formData.email || "";
+    document.getElementById("address").value = formData.address || "";
+    document.getElementById("phone").value = formData.phone || "";
+    document.getElementById("education").value = formData.education || "";
+    document.getElementById("employment").value = formData.employment || "";
+    document.getElementById("income").value = formData.income || "";
+    document.getElementById("workAddress").value = formData.workAddress || "";
+    document.getElementById("maritalStatus").value = formData.maritalStatus || "";
+    document.getElementById("age").value = formData.age || "";
+    document.getElementById("gender").value = formData.gender || "";
+    document.getElementById("race").value = formData.race || "";
+    document.getElementById("officePhone").value = formData.officePhone || "";
+    document.getElementById("courseCertificate").value = formData.courseCertificate || "";
+  }
+});
+
+function saveForm() {
+  var formData = {
+    name: document.getElementById("name").value,
+    identity: document.getElementById("identity").value,
+    dob: document.getElementById("dob").value,
+    email: document.getElementById("email").value,
+    address: document.getElementById("address").value,
+    phone: document.getElementById("phone").value,
+    education: document.getElementById("education").value,
+    employment: document.getElementById("employment").value,
+    income: document.getElementById("income").value,
+    workAddress: document.getElementById("workAddress").value,
+    maritalStatus: document.getElementById("maritalStatus").value,
+    age: document.getElementById("age").value,
+    gender: document.getElementById("gender").value,
+    race: document.getElementById("race").value,
+    officePhone: document.getElementById("officePhone").value,
+    courseCertificate: document.getElementById("courseCertificate").value
+  };
+
+  localStorage.setItem("marriageFormData", JSON.stringify(formData));
+  alert("Form Saved!");
+}
+
+function resetForm() {
+      var form = document.getElementById("marriageForm");
+      form.reset();
+      localStorage.removeItem("marriageFormData");
+    }
+      </script>
+
+      </body>
+      </html>

@@ -85,13 +85,22 @@
       margin-bottom: 20px;
       cursor:pointer;
     }
-    .button-container {
+    .input-section {
       display: flex;
       flex-direction: column;
       gap: 20px;
       align-items: center;
       margin-top: 50px;
     }
+    .button-container {
+      padding-left: 10%;
+      padding-bottom: 30px;
+    }
+
+    button:hover {
+      background: #FFB46D;
+    }
+
     button {
       padding: 10px 20px;
       background-color: #FFCB9B;
@@ -100,12 +109,11 @@
       border: none;
       cursor: pointer;
       border-radius: 5px;
-      width: 500px;
+      width: 700px;
+      height: 50px;
     }
 
   </style>
-
-
 
   <div class="header">
   <div class="banner"style="margin:0 auto; text-align:center;">
@@ -115,8 +123,8 @@
     <div class="menu">
       <ul>
         <li><a href="#">Staff Profile</a></li>
-        <li><a href="#">Preparation Course Registration</a></li>
-        <li><a href="#">Marriage Request</a></li>
+        <li><a href="STAFFPREPARATIONCOURSEINTERFACE.html">Preparation Course Registration</a></li>
+        <li><a href="STAFFMARRIAGEREQUESTINTERFACE.html">Marriage Request</a></li>
         <li><a href="#">Marriage Registration</a></li>
         <li><a href="#">Collection Certificate and Card Nikah</a></li>
         <li><a href="#">Marriage Consultion</a></li>
@@ -126,11 +134,28 @@
       </ul>
     </div>
     <div class="button-container">
-        <button><a href="C:\Users\LENOVO\Videos\Testing folder\STAFFPARTICIPANTINTERFACE.html">PARTICIPANT</button>
-        <button><a href="C:\Users\LENOVO\Videos\Testing folder\STAFFSESSION,DELETE,AFTERDELETEINTERFACE.html">SESSION</button>
-        <button><a href="C:\Users\LENOVO\Videos\Testing folder\STAFFATTENDANCEINTERFACE.html">ATTENDANCE</button>
+      <div class="input-section">
+          <button id="sessionBtn">SESSION</button>
+          <button id="participantBtn">PARTICIPANT</button>
+          <button id="attendanceBtn">ATTENDANCE</button>
       </div>
     </div>
+  </div>
     </div>
     </body>
+
+    <script>
+    
+    document.getElementById("sessionBtn").addEventListener("click", function() {
+      window.location.href = "STAFFSESSION,DELETE,AFTERDELETEINTERFACE.html";
+    });
+
+    document.getElementById("participantBtn").addEventListener("click", function() {
+      window.location.href = "STAFFPARTICIPANTINTERFACE.html";
+    });
+
+    document.getElementById("attendanceBtn").addEventListener("click", function() {
+      window.location.href = "STAFFATTENDANCEINTERFACE.html";
+    });
+    </script>
     </html>

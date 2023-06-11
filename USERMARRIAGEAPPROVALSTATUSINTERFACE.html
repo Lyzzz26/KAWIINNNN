@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+  <title>Staff Profile</title>
+</head>
+<body>
+  <style>
+    body{
+      display:block;
+    }
+    .body{
+      margin-top: 50px;
+      margin-left: 10px;
+      display:flex;
+    }
+
+    .menu ul{
+      margin-top: 20px;
+    }
+    .menu li{
+      background: rgba(203, 220, 247, 0.75);
+      border: 1px solid black;
+      padding:10px;
+      list-style:none;
+    }
+    .menu li:hover{
+      background-color: rgba(98, 158, 255, 0.75);
+    }
+
+    a{
+      color:black;
+      text-decoration: none;
+    }
+    .box {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    float: left;
+    padding-left: 10px;
+    background: #FFC860;
+    }
+
+
+    table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+
+  td {
+    padding: 13px;
+  }
+  th {
+    background-color: lightgray;
+    color: black;
+  }
+  .HeaderText {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border: none;
+    background: rgba(203, 220, 247, 0.75);
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: none;
+      background-color: white;
+    }
+    .button-link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    }
+    .button-input {
+    border: none;
+    background: white;
+  }
+  .button.applicant-info {
+      background-color: #3984ff;
+      border: none;
+      height: 50px;
+      font-weight: bold;
+    }
+
+    .button.spouse-info {
+      background-color: #a0c1fb;
+      border: none;
+      margin-left: 285px;
+      margin-right: 285px;
+      height: 50px;
+      font-weight: bold;
+    }
+
+    .button.marriage-info {
+      background-color: #a0c1fb;
+      border: none;
+      height: 50px;
+      font-weight: bold;
+    }
+    .print-button {
+    background-image: url("https://cdn.onlinewebfonts.com/svg/img_229016.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: lightgray;
+    width: 40px; 
+    height: 40px;
+    border: none;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    }
+    .print-button:hover {
+    background-color: white;
+    }
+    .info {
+    background-image: url("https://webstockreview.net/images/edit-icon-png-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: lightgray;
+    width: 37px; 
+    height: 38px;
+    border: none;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer; 
+    margin-left: 200px;
+    margin-right: 20px;
+    }
+    .upload {
+    background-image: url("https://th.bing.com/th/id/R.d9a6bd708a172f16aad5ad3fa67eb0d6?rik=R3Tzq5ToNS5Mfg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_454208.png&ehk=dXNYO0yPVI%2fPqj7Z1Ni3ojdXzhihh8ssGuxgiGamQmQ%3d&risl=&pid=ImgRaw&r=0");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: lightgray;
+    width: 35px; 
+    height: 40px;
+    border: none;
+    padding: 8px 10px;
+    border: none;
+    cursor: pointer; 
+    margin-left: 20px;
+    margin-right: 20px;
+    }
+    .option-cell {
+    width: 10px; 
+  }
+  .Submit {
+    float: right;
+    background-color: #aec6ee;
+    border: none;
+    height: 40px;
+    width: 100px;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  .Submit:hover {
+    background-color: #6d9ced;
+  }
+  .custom-tbody {
+    background-color: white;
+    border: none;
+  }
+
+  .no{
+    background-color: #9BBDFF;
+  }
+  .yes{
+    text-align: center;
+  }
+
+
+  </style>
+
+<body>
+  <div class="header">
+      <div class="banner"style="margin:0 auto; text-align:center;">
+        <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+        </div>
+      </div>
+  <div class="body">
+      <div class="menu">
+        <ul>
+          <li><a href="#">User Profile</a></li>
+          <li><a href="USERPREPARATIONCOURSEHOMEPAGE.html">Preparation Course Registration</a></li>
+          <li><a href="USERMARRIAGEREQUESTHOMEPAGE.HTML">Marriage Request</a></li>
+          <li><a href="#">Marriage Registration</a></li>
+          <li><a href="#">Collection Certificate and Card Nikah</a></li>
+          <li><a href="#">Marriage Consultion</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+
+
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3" class="HeaderText">APPROVAL STATUS</th>
+          </tr>
+        </thead>
+
+
+          <tbody>
+            <tr>
+              <th class="no">NO.</th>
+              <th class="no">SPOURSE INFORMATION</th>
+              <th class="no">STATUS</th>
+          </tr>
+          <tr>
+              <td>1.</td>
+              <td>011208-06-0572
+                <br>NUR LILIA AMIRA BINTI KHOLID
+              </td>
+              <td class="yes">IN PROGRESS</td>
+          </tr>
+          <tr>
+              <td>2.</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>3.</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <td>4.</td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+
+      </table>
+      </div>
+
+      </body>
+      </html>

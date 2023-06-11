@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+  <title>Staff Profile</title>
+</head>
+<body>
+  <style>
+    body{
+      display:block;
+    }
+    .body{
+      margin-top: 50px;
+      margin-left: 10px;
+      display:flex;
+    }
+
+    .menu ul{
+      margin-top: 20px;
+    }
+    .menu li{
+      background: rgba(203, 220, 247, 0.75);
+      border: 1px solid black;
+      padding:10px;
+      list-style:none;
+    }
+    .menu li:hover{
+      background-color: rgba(98, 158, 255, 0.75);
+    }
+
+    a{
+      color:black;
+      text-decoration: none;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+
+  td {
+    padding: 13px;
+  }
+  th {
+    background-color: lightgray;
+    color: black;
+  }
+  .HeaderText {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border: none;
+    background: rgba(203, 220, 247, 0.75);
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .HeaderText-1 {
+    text-align: left;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border: none;
+    background: #A3B7DB;
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .HeaderText-2 {
+    text-align: right;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border: none;
+    background: #A3B7DB;
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: none;
+      background-color: lightgray;
+    }
+    .button-link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    }
+    .button-input {
+    border: none;
+    background: white;
+  }
+  .button.applicant-info {
+      background-color: #a0c1fb;
+      border: none;
+      height: 50px;
+      font-weight: bold;
+    }
+
+    .button.spouse-info {
+      background-color: #a0c1fb;
+      border: none;
+      margin-left: 285px;
+      margin-right: 285px;
+      height: 50px;
+      font-weight: bold;
+    }
+
+    .button.marriage-info {
+      background-color: #3984ff;
+      border: none;
+      height: 50px;
+      font-weight: bold;
+    }
+
+    .form-wrapper {
+        background-color: lightgray;
+    }
+
+input[type="text"] {
+width:70%; 
+}
+input[type="number"] {
+  width: 400px; 
+}
+input[type="tel"] {
+  width: 400px; 
+}
+input[type="email"] {
+  width: 400px; 
+}
+
+select[id="gender"] {
+  width: 406px;
+}
+select[id="address"] {
+  width: 406px;
+}
+.three-button {
+  text-align: right;
+  border: none;
+  background-color: white;
+}
+label {
+  width: 100px; 
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.marriage-info-header {
+        background-color: #A0DDCA;
+        color: black;
+        border-style: solid;
+        text-align: center;
+
+    }
+
+    .proposal-info-header {
+        background-color: #A0DDCA;
+        color: black;
+        border-style: solid;
+        text-align: center;
+    }
+    .form-label {
+      display: inline-table;
+        width: 150px;
+    }
+    .lightgray {
+    color: black;
+  }
+  .black {
+    color: black;
+  }
+  button {
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    font-weight:bold;
+    border: none;
+  background-color: #9BBDFF;
+  }
+  button:hover{
+  background-color: #718fcb;
+  }
+  </style>
+
+<script>
+
+</script>
+
+<body>
+  <div class="header">
+      <div class="banner"style="margin:0 auto; text-align:center;">
+        <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+        </div>
+      </div>
+  <div class="body">
+      <div class="menu">
+        <ul>
+          <li><a href="#">User Profile</a></li>
+          <li><a href="USERPREPARATIONCOURSEHOMEPAGE.html">Preparation Course Registration</a></li>
+          <li><a href="USERMARRIAGEREQUESTHOMEPAGE.HTML">Marriage Request</a></li>
+          <li><a href="#">Marriage Registration</a></li>
+          <li><a href="#">Collection Certificate and Card Nikah</a></li>
+          <li><a href="#">Marriage Consultion</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+              <th colspan="2" class="HeaderText">MARRIAGE REQUEST FORM</th>
+          </tr>
+          <tr>
+            <th colspan="1" class="HeaderText-1">CONSENT AND WAKALAH WALI</th>
+            <th colspan="1" class="HeaderText-2">(BORANG 4(SEKSYEN 13))</th>
+        </tr>
+        </thead>
+
+
+        <tbody>
+          <tr>
+              <td colspan="2">            
+                <form>
+                  <label for="representative">Saya</label>
+                  <input type="text" id="representative" name="representative" value="WAFI BIN KHOLID" class="lightgray">
+                  (nama wakil)
+                  <br>
+                  No. Kad Pengenalan/Passport:
+                  <input type="text" id="icPassport" name="icPassport" value="830223-06-0981">
+                  adalah
+                  <input type="text" id="relation" name="relation" value="BAPA" class="lightgray">
+                  (hubungan)
+                  <br>
+                  kepada
+                  <input type="text" id="bride" name="bride" value="NUR LILIA AMIRA BINTI KHOLID" class="lightgray">
+                  (nama pengantin perempuan)
+                  <br>
+                  dengan ini membuat pengakuan bahawa saya bersetuju dengan perkahwinan di antara
+                  <input type="text" id="relationChild" name="relationChild" value="ANAK PEREMPUAN" class="lightgray">
+                  dengan
+                  <input type="text" id="groom" name="groom" value="RIZAL BIN ROMZI" class="lightgray">
+                  (nama pengantin lelaki)
+                  <br>
+                  dengan mas kahwinnya
+                  <input type="text" id="masKahwin" name="masKahwin" value="RM 1000">
+                  *tunai/hutang.
+                  <br>
+                  <br>
+                  Saya akan mengakad nikahkan sendiri perkahwinan ini.
+                  <br>
+                  <br>
+                  Tarikh: <span class="underline black">_______________________</span>
+                  <br>
+                  <br>
+                  <span class="underline black" style="float:right;">                                                           (tandatangan Wali)</span>
+                </form>
+              </td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td colspan="2" class="three-button">
+              <button id="editBtn">Edit</button>
+              <button id="saveBtn">Save</button>
+            </div>
+          </tr>
+        </tbody>
+
+      </table>
+      </div>
+
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <script>
+        $(document).ready(function() {
+
+          $("input").prop("readonly", true);
+      
+
+          $("#editBtn").click(function() {
+            alert("You Can Edit The File Now");
+            $("input").prop("readonly", false);
+        
+          });
+
+          $("#saveBtn").click(function() {
+            $("input").prop("readonly", true);
+            alert("Document Saved!");
+            window.location.href = 'USERMARRIAGEDOCUMENTINTERFACE.html';
+          });
+        });
+      </script>
+
+      </body>
+      </html>

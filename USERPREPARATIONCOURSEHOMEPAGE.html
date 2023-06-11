@@ -119,12 +119,6 @@
 </style>
 </head>
 
-<script>
-    function checkIdentityCard() {
-      alert('Identitiy Card Number Not Found!');
-    }
-    </script>
-
 <body>
     <div class="header">
         <div class="banner"style="margin:0 auto; text-align:center;">
@@ -136,7 +130,7 @@
           <ul>
             <li><a href="#">User Profile</a></li>
             <li><a href="USERPREPARATIONCOURSEHOMEPAGE.html">Preparation Course Registration</a></li>
-            <li><a href="#">Marriage Request</a></li>
+            <li><a href="USERMARRIAGEREQUESTHOMEPAGE.HTML">Marriage Request</a></li>
             <li><a href="#">Marriage Registration</a></li>
             <li><a href="#">Collection Certificate and Card Nikah</a></li>
             <li><a href="#">Marriage Consultion</a></li>
@@ -151,9 +145,9 @@
             <tr>
               <td colspan="5" class="button-input">
                 <div class="input-section">
-                  <form method="post" action="">
+                  <form method="POST" action="registration.php">
                       <input type="text" id="identity-card" placeholder="Identification Card Number" class="custom-input">
-                      <button class="submit" onclick="checkIdentityCard()"></button>
+                      <button class="submit"></button>
                       <button><a href="USERPREPARATIONSESSIONINTERFACE.html" class="button-link">Session</a></button>
                   </form>
               </div>

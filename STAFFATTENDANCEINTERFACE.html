@@ -46,45 +46,6 @@
       color:black;
       text-decoration: none;
     }
-    .StaffInfo{
-      margin: 0 auto;
-      width: 700px;
-    }
-    .StaffInfo table{
-      margin: auto;
-      margin-top:30px;
-      width:100%;
-      border-collapse: collapse;
-      border:solid 1px black;
-      background-color: #D9D9D9;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .StaffInfo .HeaderText{
-      font-weight:bolder ;
-      background: rgba(255, 175, 24, 0.69);
-    }
-    .StaffInfo .HeaderText{
-      font-size: 30px;
-      text-align: center;
-    }
-    .StaffInfo table td{
-      font-size: 18px;
-      padding:10px 30px;
-    }
-    .edit{
-      margin: 0 auto;
-      width:20%;
-      margin-top: 20px;
-    }
-    .edit button{
-      padding: 13px 13px;
-      background: rgba(255, 186, 121, 0.75);
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 20px;
-      cursor:pointer;
-    }
     .box {
     margin-top: 20px;
     border-collapse: collapse;
@@ -96,18 +57,35 @@
 
 
     table {
+    width: 100%;
     border-collapse: collapse;
-    width: 98%;
-    }
-    th, td {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+
+  th, td {
+    padding: 10px;
     border: 1px solid black;
-    padding: 8px;
+    background-color: lightgray;
+  }
+
+  td {
+    padding: 13px;
+  }
+  th {
+    background-color: lightgray;
+    color: black;
+  }
+  .HeaderText {
     text-align: left;
-    background-color: lightgray;
-    }
-    th {
-    background-color: lightgray;
-    }
+    padding-bottom: 30px;
+    border: none;
+    background: #FFC860;
+    font-size: x-large;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
     .form-group {
       display: flex;
@@ -120,94 +98,114 @@
     color: blue;
     cursor: pointer;
     }
+    .button-input {
+    border: none;
+    background: #FFC860;
+  }
+
   </style>
 
+<body>
   <div class="header">
-  <div class="banner"style="margin:0 auto; text-align:center;">
-    <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
-  </div>
+      <div class="banner"style="margin:0 auto; text-align:center;">
+        <img src="C:\Users\LENOVO\Videos\Testing folder\header.png" width="96%" height="155px">
+        </div>
+      </div>
   <div class="body">
-    <div class="menu">
-      <ul>
-        <li><a href="#">Staff Profile</a></li>
-        <li><a href="#">Preparation Course Registration</a></li>
-        <li><a href="#">Marriage Request</a></li>
-        <li><a href="#">Marriage Registration</a></li>
-        <li><a href="#">Collection Certificate and Card Nikah</a></li>
-        <li><a href="#">Marriage Consultion</a></li>
-        <li><a href="#">Log Out</a></li>
-      </ul>
-    </div>
-    <div class="box">
-        <h2>PARTICIPANT ATTENDANCE</h2>
-        <div class="form-group">
-            <label for="SORT">SORT BY </label>
-            <select id="sorting" name="sort">
-              <option value="today">Today</option>
-              <option value="week">Last Week</option>
-              <option value="month">Last Month</option>
-            </select>
-          </div>
+      <div class="menu">
+        <ul>
+          <li><a href="#">Staff Profile</a></li>
+          <li><a href="STAFFPREPARATIONCOURSEINTERFACE.html">Preparation Course Registration</a></li>
+          <li><a href="STAFFMARRIAGEREQUESTINTERFACE.html">Marriage Request</a></li>
+          <li><a href="#">Marriage Registration</a></li>
+          <li><a href="#">Collection Certificate and Card Nikah</a></li>
+          <li><a href="#">Marriage Consultion</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
 
-        <table>
+
+      <table>
+        <thead>
+          <tr>
+            <th colspan="5" class="HeaderText">PARTICIPANT ATTENDANCE</th>
+          </tr>
+          <tr>
+            <td colspan="5" class="button-input">
+              <div class="form-group">
+                <label for="SORT">SORT BY </label>
+                <select id="sorting" name="sort">
+                  <option value="today">Today</option>
+                  <option value="week">Last Week</option>
+                  <option value="month">Last Month</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          </tr>
+        </thead>
+
+
+          <tbody>
             <tr>
-                <th>NO.</th>
-                <th>PARTICIPANT NAME</th>
-                <th>ORGANIZER</th>
-                <th>STATUS</th>
-                <th>ACTION</th>
-            </tr>
-            <tr>
-                <td>1.</td>
-                <td>MOHAMAD FAIZ IRFAN BIN MOHAMAD ZAID</td>
-                <td>PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
-                <td>IN PROGRESS</td>
-                <td><button class="button yes-button">
-                    <img src="https://clipground.com/images/yes-button-clipart-6.png" alt="Yes Button" style="width: 20px; height: 20px;">
-                    </button>
-                    <button class="button no-button">
-                    <img src="https://th.bing.com/th/id/R.c4478f951134b20366d39c4f2b771170?rik=kxF0cLUNW1ROzQ&riu=http%3a%2f%2fcdn.1001freedownloads.com%2fvector%2fthumb%2f90431%2fBoton_mal.png&ehk=0TXbdw1baFCXeAj1AzdylKdSPCgDsQfD71wT6e%2fkpwU%3d&risl=&pid=ImgRaw&r=0" alt="No Button" style="width: 20px; height: 20px;">
-                    </button>
-                    <button class="button upload-button">
-                    <img src="https://th.bing.com/th/id/R.d9a6bd708a172f16aad5ad3fa67eb0d6?rik=R3Tzq5ToNS5Mfg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_454208.png&ehk=dXNYO0yPVI%2fPqj7Z1Ni3ojdXzhihh8ssGuxgiGamQmQ%3d&risl=&pid=ImgRaw&r=0" alt="Upload Button" style="width: 20px; height: 20px;">
-                    </button></td>
-            </tr>
-            <tr>
-                <td>2.</td>
-                <td>RIZAL BIN ROMZI</td>
-                <td>PEJABAT AGAMA ISLAM JERANTUT</td>
-                <td>COMPLETE</td>
-                <td><button class="button yes-button">
-                    <img src="https://clipground.com/images/yes-button-clipart-6.png" alt="Yes Button" style="width: 20px; height: 20px;">
-                    </button>
-                    <button class="button no-button">
-                    <img src="https://th.bing.com/th/id/R.c4478f951134b20366d39c4f2b771170?rik=kxF0cLUNW1ROzQ&riu=http%3a%2f%2fcdn.1001freedownloads.com%2fvector%2fthumb%2f90431%2fBoton_mal.png&ehk=0TXbdw1baFCXeAj1AzdylKdSPCgDsQfD71wT6e%2fkpwU%3d&risl=&pid=ImgRaw&r=0" alt="No Button" style="width: 20px; height: 20px;">
-                    </button>
-                    <button class="button upload-button">
-                    <img src="https://th.bing.com/th/id/R.d9a6bd708a172f16aad5ad3fa67eb0d6?rik=R3Tzq5ToNS5Mfg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_454208.png&ehk=dXNYO0yPVI%2fPqj7Z1Ni3ojdXzhihh8ssGuxgiGamQmQ%3d&risl=&pid=ImgRaw&r=0" alt="Upload Button" style="width: 20px; height: 20px;">
-                    </button></td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td>SYED SALEHUDDIN AL JUFRI BIN SYED RAMLI</td>
-                <td>PEJABAT AGAMA ISLAM TEMERLOH</td>
-                <td>ABSENT</td>
-                <td><button class="button yes-button">
-                    <img src="https://clipground.com/images/yes-button-clipart-6.png" alt="Yes Button" style="width: 20px; height: 20px;">
-                    </button>
-                    <button class="button no-button">
-                    <img src="https://th.bing.com/th/id/R.c4478f951134b20366d39c4f2b771170?rik=kxF0cLUNW1ROzQ&riu=http%3a%2f%2fcdn.1001freedownloads.com%2fvector%2fthumb%2f90431%2fBoton_mal.png&ehk=0TXbdw1baFCXeAj1AzdylKdSPCgDsQfD71wT6e%2fkpwU%3d&risl=&pid=ImgRaw&r=0" alt="No Button" style="width: 20px; height: 20px;">
-                    </button>
-                    <button class="button upload-button">
-                    <img src="https://th.bing.com/th/id/R.d9a6bd708a172f16aad5ad3fa67eb0d6?rik=R3Tzq5ToNS5Mfg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_454208.png&ehk=dXNYO0yPVI%2fPqj7Z1Ni3ojdXzhihh8ssGuxgiGamQmQ%3d&risl=&pid=ImgRaw&r=0" alt="Upload Button" style="width: 20px; height: 20px;">
-                    </button></td>
-            </tr>
-        </table>
-    </div>
-    </div>
-    </div>
-        
-    <script>
+              <th>NO.</th>
+              <th>PARTICIPANT NAME</th>
+              <th>ORGANIZER</th>
+              <th>STATUS</th>
+              <th>ACTION</th>
+          </tr>
+          <tr>
+              <td>1.</td>
+              <td>MOHAMAD FAIZ IRFAN BIN MOHAMAD ZAID</td>
+              <td>PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
+              <td>IN PROGRESS</td>
+              <td><button class="button yes-button">
+                  <img src="https://clipground.com/images/yes-button-clipart-6.png" alt="Yes Button" style="width: 20px; height: 20px;">
+                  </button>
+                  <button class="button no-button">
+                  <img src="https://th.bing.com/th/id/R.c4478f951134b20366d39c4f2b771170?rik=kxF0cLUNW1ROzQ&riu=http%3a%2f%2fcdn.1001freedownloads.com%2fvector%2fthumb%2f90431%2fBoton_mal.png&ehk=0TXbdw1baFCXeAj1AzdylKdSPCgDsQfD71wT6e%2fkpwU%3d&risl=&pid=ImgRaw&r=0" alt="No Button" style="width: 20px; height: 20px;">
+                  </button>
+                  <button class="button upload-button">
+                  <img src="https://th.bing.com/th/id/R.d9a6bd708a172f16aad5ad3fa67eb0d6?rik=R3Tzq5ToNS5Mfg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_454208.png&ehk=dXNYO0yPVI%2fPqj7Z1Ni3ojdXzhihh8ssGuxgiGamQmQ%3d&risl=&pid=ImgRaw&r=0" alt="Upload Button" style="width: 20px; height: 20px;">
+                  </button></td>
+          </tr>
+          <tr>
+              <td>2.</td>
+              <td>RIZAL BIN ROMZI</td>
+              <td>PEJABAT AGAMA ISLAM JERANTUT</td>
+              <td>COMPLETE</td>
+              <td><button class="button yes-button">
+                  <img src="https://clipground.com/images/yes-button-clipart-6.png" alt="Yes Button" style="width: 20px; height: 20px;">
+                  </button>
+                  <button class="button no-button">
+                  <img src="https://th.bing.com/th/id/R.c4478f951134b20366d39c4f2b771170?rik=kxF0cLUNW1ROzQ&riu=http%3a%2f%2fcdn.1001freedownloads.com%2fvector%2fthumb%2f90431%2fBoton_mal.png&ehk=0TXbdw1baFCXeAj1AzdylKdSPCgDsQfD71wT6e%2fkpwU%3d&risl=&pid=ImgRaw&r=0" alt="No Button" style="width: 20px; height: 20px;">
+                  </button>
+                  <button class="button upload-button">
+                  <img src="https://th.bing.com/th/id/R.d9a6bd708a172f16aad5ad3fa67eb0d6?rik=R3Tzq5ToNS5Mfg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_454208.png&ehk=dXNYO0yPVI%2fPqj7Z1Ni3ojdXzhihh8ssGuxgiGamQmQ%3d&risl=&pid=ImgRaw&r=0" alt="Upload Button" style="width: 20px; height: 20px;">
+                  </button></td>
+          </tr>
+          <tr>
+              <td>3.</td>
+              <td>SYED SALEHUDDIN AL JUFRI BIN SYED RAMLI</td>
+              <td>PEJABAT AGAMA ISLAM TEMERLOH</td>
+              <td>ABSENT</td>
+              <td><button class="button yes-button">
+                  <img src="https://clipground.com/images/yes-button-clipart-6.png" alt="Yes Button" style="width: 20px; height: 20px;">
+                  </button>
+                  <button class="button no-button">
+                  <img src="https://th.bing.com/th/id/R.c4478f951134b20366d39c4f2b771170?rik=kxF0cLUNW1ROzQ&riu=http%3a%2f%2fcdn.1001freedownloads.com%2fvector%2fthumb%2f90431%2fBoton_mal.png&ehk=0TXbdw1baFCXeAj1AzdylKdSPCgDsQfD71wT6e%2fkpwU%3d&risl=&pid=ImgRaw&r=0" alt="No Button" style="width: 20px; height: 20px;">
+                  </button>
+                  <button class="button upload-button">
+                  <img src="https://th.bing.com/th/id/R.d9a6bd708a172f16aad5ad3fa67eb0d6?rik=R3Tzq5ToNS5Mfg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_454208.png&ehk=dXNYO0yPVI%2fPqj7Z1Ni3ojdXzhihh8ssGuxgiGamQmQ%3d&risl=&pid=ImgRaw&r=0" alt="Upload Button" style="width: 20px; height: 20px;">
+                  </button></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      </body>
+
+      <script>
         var yesButtons = document.querySelectorAll(".yes-button");
         var noButtons = document.querySelectorAll(".no-button");
         var uploadButtons = document.querySelectorAll(".upload-button");
@@ -239,5 +237,4 @@
         }
       </script>
 
-    </body>
-    </html>
+      </html>
